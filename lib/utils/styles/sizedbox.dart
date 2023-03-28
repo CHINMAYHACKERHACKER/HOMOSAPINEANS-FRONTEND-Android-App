@@ -14,7 +14,13 @@ class AppSize {
     height: 30,
   );
   static const kHeight40 = SizedBox(
-    height: 90,
+    height: 40,
+  );
+  static const kHeight50 = SizedBox(
+    height: 50,
+  );
+  static const kHeight60 = SizedBox(
+    height: 60,
   );
 
   static const kWidth5 = SizedBox(

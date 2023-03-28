@@ -4,9 +4,10 @@ import 'package:homo_sapiens/utils/colors/colors.dart';
 class ContainerWidget extends StatelessWidget {
   const ContainerWidget({
     super.key,
-    required this.image,
+    this.child,
   });
-  final String image;
+  final Widget? child;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,10 +18,8 @@ class ContainerWidget extends StatelessWidget {
         border: Border.all(
           color: AppColors.kDarkPrimary,
         ),
-        image: DecorationImage(
-          image: AssetImage(image),
-        ),
       ),
+      child: child,
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:homo_sapiens/view/signup_screen/signup_screen.dart';
 
 class ButtonWidget extends StatelessWidget {
   const ButtonWidget({
@@ -9,6 +10,7 @@ class ButtonWidget extends StatelessWidget {
     this.shape,
     this.child,
     this.side,
+    this.naving,
   });
 
   final double? height;
@@ -17,13 +19,17 @@ class ButtonWidget extends StatelessWidget {
   final OutlinedBorder? shape;
   final Widget? child;
   final BorderSide? side;
+  final dynamic naving;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: height,
       width: width,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => naving));
+        },
         style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor,
           shape: shape,

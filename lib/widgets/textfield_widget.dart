@@ -27,18 +27,24 @@ class TextfieldWidget extends StatelessWidget {
         color: AppColors.kWhite,
       ),
       decoration: InputDecoration(
+        focusColor: AppColors.kDarkPrimary,
+        focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(14),
+            borderSide: const BorderSide(
+              color: AppColors.kDarkPrimary,
+            )),
         hintText: hintText,
         hintStyle: hintStyle,
-        contentPadding: contentPadding,
+        contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 13),
         suffixIcon: suffixIcon,
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(14),
           borderSide: const BorderSide(
             color: AppColors.kDarkPrimary,
           ),
         ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(14),
           borderSide: const BorderSide(
             color: AppColors.kDarkPrimary,
           ),

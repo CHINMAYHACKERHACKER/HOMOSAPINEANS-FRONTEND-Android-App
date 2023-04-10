@@ -35,7 +35,8 @@ class TextfieldWidget extends StatelessWidget {
             )),
         hintText: hintText,
         hintStyle: hintStyle,
-        contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 13),
+        contentPadding:
+            const EdgeInsets.symmetric(vertical: 15, horizontal: 13),
         suffixIcon: suffixIcon,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(14),

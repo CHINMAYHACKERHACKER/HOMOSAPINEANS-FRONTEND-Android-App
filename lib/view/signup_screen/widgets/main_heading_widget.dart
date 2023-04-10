@@ -46,7 +46,7 @@ class MainHeadingWidget extends StatelessWidget {
               fontSize: 57,
             ),
           ),
-          Positioned(bottom: 4, right: 10, child: const SubHeadingWidget()),
+          const Positioned(bottom: 4, right: 10, child: SubHeadingWidget()),
         ],
       ),
     );

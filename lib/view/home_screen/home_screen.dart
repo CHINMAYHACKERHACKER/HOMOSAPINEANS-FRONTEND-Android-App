@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:homo_sapiens/utils/colors/colors.dart';
 import 'package:homo_sapiens/utils/styles/sizedbox.dart';
+import 'package:homo_sapiens/view/home_screen/widgets/pop_btn.dart';
+import 'package:homo_sapiens/view/home_screen/widgets/react_text.dart';
+import 'package:homo_sapiens/widgets/custom_appbar.dart';
 import 'package:homo_sapiens/widgets/text_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -21,12 +22,19 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    SvgPicture.asset('assets/images/Group 383.svg'),
-                    AppSize.kWidth20,
+                    AppSize.kWidth5,
+                    Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: SvgPicture.asset(
+                        'assets/images/Group 383.svg',
+                        height: 27,
+                      ),
+                    ),
+                    AppSize.kWidth10,
                     Stack(
                       clipBehavior: Clip.none,
-                      children: [
-                        const Text(
+                      children: const [
+                        Text(
                           'E=HOMO SAPIENS',
                           style: TextStyle(
                             fontSize: 17,
@@ -34,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        const Positioned(
+                        Positioned(
                           right: 2,
                           bottom: 16,
                           child: TextWidget(
@@ -46,80 +54,7 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                     const Spacer(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        IconButton(
-                          padding: const EdgeInsets.all(1),
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.search,
-                            size: 22,
-                          ),
-                        ),
-                        Stack(
-                          children: <Widget>[
-                            IconButton(
-                                icon: const Icon(
-                                  Icons.notifications_none_rounded,
-                                  size: 22,
-                                ),
-                                padding: const EdgeInsets.all(1),
-                                onPressed: () {
-                                  // setState(() {
-                                  //   counter = 0;
-                                  // });
-                                }),
-                            // counter != 0 ?
-                            Positioned(
-                              right: 14,
-                              top: 11,
-                              child: Container(
-                                padding: const EdgeInsets.all(0),
-                                decoration: BoxDecoration(
-                                  color: const Color.fromARGB(255, 252, 39, 24),
-                                  borderRadius: BorderRadius.circular(6),
-                                ),
-                                constraints: const BoxConstraints(
-                                  minWidth: 8,
-                                  minHeight: 8,
-                                ),
-
-                                // child: Text(
-                                //   '0',
-                                //   style: TextStyle(
-                                //     color: Colors.white,
-                                //     fontSize: 8,
-                                //   ),
-                                //   textAlign: TextAlign.center,
-                                // ),
-                              ),
-                            )
-                            // : new Container()
-                            ,
-                          ],
-                        ),
-                        ElevatedButton.icon(
-                          style: ElevatedButton.styleFrom(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 10, vertical: 1),
-                            textStyle: const TextStyle(
-                                fontWeight: FontWeight.w400, fontSize: 12),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(7.0)),
-                            backgroundColor: AppColors.kGrey,
-                            foregroundColor: Colors.pinkAccent,
-                          ),
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.wechat,
-                            size: 12,
-                          ),
-                          label: const Text('Textism'),
-                        ),
-                        AppSize.kWidth5
-                      ],
-                    ),
+                    const CustomAppbar(),
                   ],
                 ),
                 AppSize.kHeight10,
@@ -136,11 +71,11 @@ class HomeScreen extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: AppColors.kDarkPrimary,
                             image: (index != 0)
-                                ? DecorationImage(
+                                ? const DecorationImage(
                                     image: NetworkImage(
                                         'https://s3.amazonaws.com/designco-web-assets/uploads/2020/03/thumb-hover-1.png'),
                                     fit: BoxFit.cover)
-                                : DecorationImage(
+                                : const DecorationImage(
                                     image: NetworkImage(
                                         'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f2c728e8-0a31-47bd-817c-b74935a8b6f8/dctu83w-59bc00a2-bfde-4152-8c29-709254f89e63.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2YyYzcyOGU4LTBhMzEtNDdiZC04MTdjLWI3NDkzNWE4YjZmOFwvZGN0dTgzdy01OWJjMDBhMi1iZmRlLTQxNTItOGMyOS03MDkyNTRmODllNjMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.YS2IqL1PgOIj4yrx-0zw_G0y919OYiRNOaTMI35iCGs'),
                                     fit: BoxFit.cover),
@@ -152,7 +87,7 @@ class HomeScreen extends StatelessWidget {
                 AppSize.kHeight10,
                 ListView.builder(
                     itemCount: 10,
-                    physics: ScrollPhysics(),
+                    physics: const ScrollPhysics(),
                     shrinkWrap: true,
                     itemBuilder: (BuildContext context, int index) {
                       return Container(
@@ -194,89 +129,115 @@ class HomeScreen extends StatelessWidget {
                                     color: AppColors.kWhite,
                                   ),
                                   const Spacer(),
-                                  SvgPicture.asset(
-                                      'assets/images/Group 383.svg'),
+                                  PopupBtn(),
                                 ],
                               ),
                             ),
                             Image.network(
                                 'https://images.unsplash.com/photo-1545987796-200677ee1011?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'),
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                              padding: const EdgeInsets.all(16.0),
+                              child: Column(
                                 children: [
-                                  TextWidget(
-                                    name: '4999 Lovers',
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      const TextWidget(
+                                        name: '4999 Lovers',
+                                        color: AppColors.kWhite,
+                                        fontSize: 9,
+                                      ),
+                                      const TextWidget(
+                                        name: '4999 Amazing',
+                                        color: AppColors.kWhite,
+                                        fontSize: 9,
+                                      ),
+                                      const TextWidget(
+                                        name: '4999 Outstanding',
+                                        color: AppColors.kWhite,
+                                        fontSize: 9,
+                                      ),
+                                      TextWidget(
+                                        name: '240 comments. 740 shares',
+                                        color:
+                                            AppColors.kWhite.withOpacity(0.6),
+                                        fontSize: 9,
+                                      ),
+                                    ],
+                                  ),
+                                  const Divider(),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceAround,
+                                    children: [
+                                      const RectButton(
+                                        reactbtns: Icon(
+                                          Icons.favorite,
+                                          color: Colors.red,
+                                          size: 19,
+                                        ),
+                                        title: 'Lovely',
+                                      ),
+                                      const RectButton(
+                                        reactbtns: Icon(
+                                          Icons.star,
+                                          color: Colors.yellow,
+                                          size: 19,
+                                        ),
+                                        title: 'Amazing',
+                                      ),
+                                      const RectButton(
+                                        reactbtns: Icon(
+                                          Icons.workspace_premium_rounded,
+                                          color: Colors.orange,
+                                          size: 19,
+                                        ),
+                                        title: 'Outstanding',
+                                      ),
+                                      AppSize.kWidth5,
+                                      CircleAvatar(
+                                        backgroundColor:
+                                            AppColors.kWhite.withOpacity(0.3),
+                                        radius: 15,
+                                        child: Center(
+                                          child: IconButton(
+                                              onPressed: () {},
+                                              icon: const Icon(
+                                                Icons.message_outlined,
+                                                size: 15,
+                                                color: AppColors.kWhite,
+                                              )),
+                                        ),
+                                      ),
+                                      CircleAvatar(
+                                        radius: 15,
+                                        backgroundColor:
+                                            AppColors.kWhite.withOpacity(0.3),
+                                        child: Center(
+                                          child: IconButton(
+                                              onPressed: () {},
+                                              icon: const Icon(
+                                                Icons.share,
+                                                size: 15,
+                                                color: AppColors.kWhite,
+                                              )),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  const Divider(
+                                    thickness: 1,
+                                  ),
+                                  const TextWidget(
+                                    name:
+                                        ' The vest red front thinf og did so teh rain usuese The vest red front thinf og did so teh rain usuese The vest red front thinf og did so teh rain usuese The vest red front thinf og did so teh rain usuese  ',
                                     color: AppColors.kWhite,
-                                    fontSize: 9,
-                                  ),
-                                  TextWidget(
-                                    name: '4999 Amazing',
-                                    color: AppColors.kWhite,
-                                    fontSize: 9,
-                                  ),
-                                  TextWidget(
-                                    name: '4999 Outstanding',
-                                    color: AppColors.kWhite,
-                                    fontSize: 9,
-                                  ),
-                                  TextWidget(
-                                    name: '240 comments. 740 shares',
-                                    color: AppColors.kWhite.withOpacity(0.6),
-                                    fontSize: 9,
-                                  ),
+                                    fontSize: 11,
+                                  )
                                 ],
                               ),
                             ),
-                            Divider(),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                rectButton(),
-                                rectButton(),
-                                rectButton(),
-                                CircleAvatar(
-                                  backgroundColor:
-                                      AppColors.kWhite.withOpacity(0.3),
-                                  radius: 15,
-                                  child: Center(
-                                    child: IconButton(
-                                        onPressed: () {},
-                                        icon: Icon(
-                                          Icons.message_outlined,
-                                          size: 15,
-                                          color: AppColors.kWhite,
-                                        )),
-                                  ),
-                                ),
-                                CircleAvatar(
-                                  radius: 15,
-                                  backgroundColor:
-                                      AppColors.kWhite.withOpacity(0.3),
-                                  child: Center(
-                                    child: IconButton(
-                                        onPressed: () {},
-                                        icon: Icon(
-                                          Icons.share,
-                                          size: 15,
-                                          color: AppColors.kWhite,
-                                        )),
-                                  ),
-                                )
-                              ],
-                            ),
-                            Divider(),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: TextWidget(
-                                name:
-                                    ' The vest red front thinf og did so teh rain usuese The vest red front thinf og did so teh rain usuese The vest red front thinf og did so teh rain usuese The vest red front thinf og did so teh rain usuese  ',
-                                color: AppColors.kWhite,
-                                fontSize: 11,
-                              ),
-                            )
                           ],
                         ),
                       );
@@ -284,35 +245,6 @@ class HomeScreen extends StatelessWidget {
               ],
             )),
       ),
-    );
-  }
-}
-
-class rectButton extends StatelessWidget {
-  const rectButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 30,
-      child: ElevatedButton.icon(
-          style: ElevatedButton.styleFrom(
-            textStyle:
-                const TextStyle(fontWeight: FontWeight.w400, fontSize: 9),
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(7.0)),
-            backgroundColor: AppColors.kWhite.withOpacity(0.3),
-            foregroundColor: Colors.white,
-          ),
-          onPressed: () {},
-          icon: Icon(
-            Icons.favorite,
-            color: Colors.red,
-            size: 19,
-          ),
-          label: Text('Lovely')),
     );
   }
 }

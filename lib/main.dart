@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:homo_sapiens/utils/colors/colors.dart';
-import 'package:homo_sapiens/view/home_screen/home_screen.dart';
+import 'package:homo_sapiens/view/home_screen/bottom_navbar.dart';
 import 'package:homo_sapiens/view/login_screen/login_screen.dart';
-import 'package:homo_sapiens/view/signup_screen/signup_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,10 +18,11 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           scaffoldBackgroundColor: AppColors.kBaseColor,
           primarySwatch: Colors.blue,
-          appBarTheme: AppBarTheme(
+          appBarTheme: const AppBarTheme(
               backgroundColor: AppColors.kBaseColor,
-              foregroundColor: AppColors.kWhite)),
-      home: const LoginScreen(),
+              foregroundColor: AppColors.kWhite),
+          bottomAppBarTheme: BottomAppBarTheme(color: AppColors.kGrey)),
+      home: BotomNavigationBar(),
     );
   }
 }

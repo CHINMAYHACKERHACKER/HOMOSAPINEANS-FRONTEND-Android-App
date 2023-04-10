@@ -1,11 +1,8 @@
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:homo_sapiens/utils/colors/colors.dart';
 import 'package:homo_sapiens/utils/styles/sizedbox.dart';
 import 'package:homo_sapiens/view/login_screen/widgets/subheading_widget.dart';
-import 'package:homo_sapiens/view/signup_screen/signup_screen.dart';
 import 'package:homo_sapiens/widgets/button_widget.dart';
-import 'package:homo_sapiens/widgets/container_login_widget.dart';
 import 'package:homo_sapiens/widgets/text_widget.dart';
 import 'package:homo_sapiens/widgets/textfield_widget.dart';
 
@@ -62,7 +59,7 @@ class SignupScreen extends StatelessWidget {
                         fontSize: 191,
                       ),
                     ),
-                    Positioned(
+                    const Positioned(
                       top: 100,
                       left: 14,
                       child: Align(

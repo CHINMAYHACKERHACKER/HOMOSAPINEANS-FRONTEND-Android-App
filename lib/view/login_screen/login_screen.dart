@@ -4,7 +4,6 @@ import 'package:homo_sapiens/utils/colors/colors.dart';
 import 'package:homo_sapiens/utils/styles/sizedbox.dart';
 import 'package:homo_sapiens/view/home_screen/home_screen.dart';
 import 'package:homo_sapiens/view/login_screen/widgets/subheading_widget.dart';
-import 'package:homo_sapiens/view/signup_screen/signup_screen.dart';
 import 'package:homo_sapiens/view/signup_screen/widgets/signup_options.dart';
 import 'package:homo_sapiens/widgets/button_widget.dart';
 import 'package:homo_sapiens/widgets/container_login_widget.dart';
@@ -100,7 +99,7 @@ class LoginScreen extends StatelessWidget {
                             ),
                             AppSize.kHeight20,
                             ButtonWidget(
-                              naving: HomeScreen(),
+                              naving: const HomeScreen(),
                               height:
                                   MediaQuery.of(context).size.height * 0.065,
                               width: double.infinity,
@@ -191,7 +190,7 @@ class LoginScreen extends StatelessWidget {
                               side: const BorderSide(
                                 color: AppColors.kDarkPrimary,
                               ),
-                              naving: SignUpOptionScreen(),
+                              naving: const SignUpOptionScreen(),
                               child: const TextWidget(
                                 name: "Create an account",
                                 color: AppColors.kDarkPrimary,

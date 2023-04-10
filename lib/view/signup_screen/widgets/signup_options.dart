@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:homo_sapiens/utils/colors/colors.dart';
 import 'package:homo_sapiens/utils/styles/sizedbox.dart';
 import 'package:homo_sapiens/view/home_screen/home_screen.dart';
-import 'package:homo_sapiens/view/login_screen/widgets/subheading_widget.dart';
 import 'package:homo_sapiens/view/signup_screen/widgets/container_widget.dart';
 import 'package:homo_sapiens/view/signup_screen/widgets/main_heading_widget.dart';
 import 'package:homo_sapiens/widgets/text_widget.dart';
@@ -49,7 +48,7 @@ class SignUpOptionScreen extends StatelessWidget {
                     expandedCrossAxisAlignment: CrossAxisAlignment.center,
                     iconColor: AppColors.kWhite,
                     collapsedBackgroundColor: AppColors.kDarkPrimary,
-                    backgroundColor: Color.fromARGB(255, 177, 213, 216),
+                    backgroundColor: const Color.fromARGB(255, 177, 213, 216),
                     collapsedShape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
                     ),
@@ -58,9 +57,9 @@ class SignUpOptionScreen extends StatelessWidget {
                     ),
                     title: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
+                      children: const [
                         AppSize.kWidth20,
-                        const TextWidget(
+                        TextWidget(
                           name: "Select Category",
                           color: AppColors.kWhite,
                         ),
@@ -68,7 +67,7 @@ class SignUpOptionScreen extends StatelessWidget {
                     ),
                     children: [
                       Padding(
-                        padding: EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(10.0),
                         child: ContainerCategory(
                           color: AppColors.kWhite,
                           borderRadius: BorderRadius.circular(14),
@@ -77,14 +76,14 @@ class SignUpOptionScreen extends StatelessWidget {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => HomeScreen(),
+                                    builder: (context) => const HomeScreen(),
                                   ));
                             },
                             tileColor: AppColors.kWhite,
-                            title: Center(
+                            title: const Center(
                               child: TextWidget(name: "Personal Account"),
                             ),
-                            subtitle: Center(
+                            subtitle: const Center(
                               child: TextWidget(
                                 name: "Personal Account",
                                 fontSize: 10,

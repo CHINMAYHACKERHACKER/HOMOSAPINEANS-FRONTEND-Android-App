@@ -19,7 +19,7 @@ class CustomAppbar extends StatelessWidget {
           icon: const Icon(
             CupertinoIcons.search,
             size: 22,
-            color: AppColors.kWhite,
+            // color: AppColors.kWhite,
           ),
         ),
         Stack(
@@ -28,7 +28,7 @@ class CustomAppbar extends StatelessWidget {
                 icon: const Icon(
                   Icons.notifications_none_rounded,
                   size: 22,
-                  color: AppColors.kWhite,
+                  // color: AppColors.kWhite,
                 ),
                 padding: const EdgeInsets.all(1),
                 onPressed: () {
@@ -74,8 +74,8 @@ class CustomAppbar extends StatelessWidget {
                   const TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(3.0)),
-              backgroundColor: AppColors.kGrey,
-              foregroundColor: Colors.white,
+              // backgroundColor: AppColors.kGrey,
+              // foregroundColor: Colors.white,
             ),
             onPressed: () {},
             icon: const Icon(

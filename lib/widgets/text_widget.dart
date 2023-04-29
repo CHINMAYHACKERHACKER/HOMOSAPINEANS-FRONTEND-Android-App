@@ -30,6 +30,7 @@ class TextWidget extends StatelessWidget {
         fontSize: fontSize,
         fontFamily: fontFamily,
         fontWeight: fontWeight,
+        height: 1.7,
         overflow: overflow,
         letterSpacing: letterSpacing,
       ),

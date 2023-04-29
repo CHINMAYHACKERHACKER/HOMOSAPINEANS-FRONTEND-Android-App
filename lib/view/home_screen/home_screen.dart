@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
                           'E=HOMO SAPIENS',
                           style: TextStyle(
                             fontSize: 17,
-                            color: AppColors.kWhite,
+                            // color: AppColors.kWhite,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -73,11 +73,11 @@ class HomeScreen extends StatelessWidget {
                             image: (index != 0)
                                 ? const DecorationImage(
                                     image: NetworkImage(
-                                        'https://s3.amazonaws.com/designco-web-assets/uploads/2020/03/thumb-hover-1.png'),
+                                        'https://images.hindustantimes.com/img/2022/04/01/1600x900/2f731094-a9c1-11ec-9297-ed70bb26c8ff_1648825261500.jpg'),
                                     fit: BoxFit.cover)
                                 : const DecorationImage(
                                     image: NetworkImage(
-                                        'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f2c728e8-0a31-47bd-817c-b74935a8b6f8/dctu83w-59bc00a2-bfde-4152-8c29-709254f89e63.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2YyYzcyOGU4LTBhMzEtNDdiZC04MTdjLWI3NDkzNWE4YjZmOFwvZGN0dTgzdy01OWJjMDBhMi1iZmRlLTQxNTItOGMyOS03MDkyNTRmODllNjMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.YS2IqL1PgOIj4yrx-0zw_G0y919OYiRNOaTMI35iCGs'),
+                                        'https://assets.website-files.com/5ab4a7f2a6f17cdc68374b6a/5aea97e249aae4193e09ce60_YS%20logos-01.png'),
                                     fit: BoxFit.cover),
                             borderRadius: BorderRadius.circular(19),
                           ),
@@ -90,10 +90,10 @@ class HomeScreen extends StatelessWidget {
                     physics: const ScrollPhysics(),
                     shrinkWrap: true,
                     itemBuilder: (BuildContext context, int index) {
-                      return Container(
-                        margin: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          color: AppColors.kLightGrey.withOpacity(0.5),
+                      return Card(
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 2),
+                        shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(19),
                         ),
                         child: Column(
@@ -107,132 +107,167 @@ class HomeScreen extends StatelessWidget {
                                     width: 40,
                                     padding: const EdgeInsets.all(5),
                                     decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(14),
+                                        image: DecorationImage(
+                                            image: NetworkImage(
+                                                'https://www.scrolldroll.com/wp-content/uploads/2021/09/Dhanush-best-south-indian-actors-scaled.jpg'),
+                                            fit: BoxFit.contain),
+                                        borderRadius: BorderRadius.circular(12),
                                         border: Border.all(
                                           color: AppColors.kDarkPrimary,
                                           width: 1,
                                         )),
-                                    child: const TextWidget(
-                                      name: 'A',
-                                      textAlign: TextAlign.center,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 19,
-                                      color: AppColors.kWhite,
+                                    child: Container(
+                                      height: 10,
                                     ),
                                   ),
-                                  AppSize.kWidth5,
+                                  AppSize.kWidth10,
                                   const TextWidget(
-                                    name: 'Aadhmi',
+                                    name: 'Dhanush',
                                     textAlign: TextAlign.center,
                                     fontWeight: FontWeight.w400,
-                                    fontSize: 13,
-                                    color: AppColors.kWhite,
+                                    fontSize: 16,
+                                    fontFamily: 'Chalkduster',
+                                    // color: AppColors.kWhite,
                                   ),
                                   const Spacer(),
                                   PopupBtn(),
                                 ],
                               ),
                             ),
-                            Image.network(
-                                'https://images.unsplash.com/photo-1545987796-200677ee1011?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'),
+                            Container(
+                              height: 550,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: NetworkImage(
+                                          'https://www.scrolldroll.com/wp-content/uploads/2021/09/Dhanush-best-south-indian-actors-scaled.jpg'),
+                                      fit: BoxFit.cover)),
+                            ),
                             Padding(
                               padding: const EdgeInsets.all(16.0),
                               child: Column(
                                 children: [
                                   Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      const TextWidget(
-                                        name: '4999 Lovers',
-                                        color: AppColors.kWhite,
-                                        fontSize: 9,
-                                      ),
-                                      const TextWidget(
-                                        name: '4999 Amazing',
-                                        color: AppColors.kWhite,
-                                        fontSize: 9,
-                                      ),
-                                      const TextWidget(
-                                        name: '4999 Outstanding',
-                                        color: AppColors.kWhite,
-                                        fontSize: 9,
-                                      ),
-                                      TextWidget(
-                                        name: '240 comments. 740 shares',
-                                        color:
-                                            AppColors.kWhite.withOpacity(0.6),
-                                        fontSize: 9,
-                                      ),
-                                    ],
-                                  ),
-                                  const Divider(),
-                                  Row(
-                                    mainAxisAlignment:
                                         MainAxisAlignment.spaceAround,
                                     children: [
-                                      const RectButton(
-                                        reactbtns: Icon(
-                                          Icons.favorite,
-                                          color: Colors.red,
-                                          size: 19,
-                                        ),
-                                        title: 'Lovely',
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          const RectButton(
+                                            reactbtns: Icon(
+                                              Icons.favorite,
+                                              color: Colors.red,
+                                              size: 19,
+                                            ),
+                                            title: 'Lovely',
+                                          ),
+                                          const TextWidget(
+                                            name: '4999',
+                                            // color: AppColors.kWhite,
+                                            fontSize: 9,
+                                          ),
+                                        ],
                                       ),
-                                      const RectButton(
-                                        reactbtns: Icon(
-                                          Icons.star,
-                                          color: Colors.yellow,
-                                          size: 19,
-                                        ),
-                                        title: 'Amazing',
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          const RectButton(
+                                            reactbtns: Icon(
+                                              Icons.star,
+                                              color: Colors.yellow,
+                                              size: 19,
+                                            ),
+                                            title: 'Amazing',
+                                          ),
+                                          const TextWidget(
+                                            name: '4999',
+                                            // color: AppColors.kWhite,
+                                            fontSize: 9,
+                                          ),
+                                        ],
                                       ),
-                                      const RectButton(
-                                        reactbtns: Icon(
-                                          Icons.workspace_premium_rounded,
-                                          color: Colors.orange,
-                                          size: 19,
-                                        ),
-                                        title: 'Outstanding',
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          const RectButton(
+                                            reactbtns: Icon(
+                                              Icons.workspace_premium_rounded,
+                                              color: Colors.orange,
+                                              size: 19,
+                                            ),
+                                            title: 'Outstanding',
+                                          ),
+                                          TextWidget(
+                                            name: '240',
+                                            // color: AppColors.kWhite
+                                            //     .withOpacity(0.6),
+                                            fontSize: 9,
+                                          ),
+                                        ],
                                       ),
                                       AppSize.kWidth5,
-                                      CircleAvatar(
-                                        backgroundColor:
-                                            AppColors.kWhite.withOpacity(0.3),
-                                        radius: 15,
-                                        child: Center(
-                                          child: IconButton(
-                                              onPressed: () {},
-                                              icon: const Icon(
-                                                Icons.message_outlined,
-                                                size: 15,
-                                                color: AppColors.kWhite,
-                                              )),
-                                        ),
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          CircleAvatar(
+                                            // backgroundColor: AppColors.kWhite
+                                            // .withOpacity(0.3),
+                                            radius: 15,
+                                            child: Center(
+                                              child: IconButton(
+                                                  onPressed: () {},
+                                                  icon: const Icon(
+                                                    Icons.message_outlined,
+                                                    size: 15,
+                                                    // color: AppColors.kWhite,
+                                                  )),
+                                            ),
+                                          ),
+                                          TextWidget(
+                                            name: '740',
+                                            // color: AppColors.kWhite
+                                            //     .withOpacity(0.6),
+                                            fontSize: 9,
+                                          ),
+                                        ],
                                       ),
-                                      CircleAvatar(
-                                        radius: 15,
-                                        backgroundColor:
-                                            AppColors.kWhite.withOpacity(0.3),
-                                        child: Center(
-                                          child: IconButton(
-                                              onPressed: () {},
-                                              icon: const Icon(
-                                                Icons.share,
-                                                size: 15,
-                                                color: AppColors.kWhite,
-                                              )),
-                                        ),
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          CircleAvatar(
+                                            radius: 15,
+                                            // backgroundColor: AppColors.kWhite
+                                            // .withOpacity(0.3),
+                                            child: Center(
+                                              child: IconButton(
+                                                  onPressed: () {},
+                                                  icon: const Icon(
+                                                    Icons.share,
+                                                    size: 15,
+                                                    // color: AppColors.kWhite,
+                                                  )),
+                                            ),
+                                          ),
+                                          TextWidget(
+                                            name: '740',
+                                            // color: AppColors.kWhite
+                                            //     .withOpacity(0.6),
+                                            fontSize: 9,
+                                          ),
+                                        ],
                                       )
                                     ],
                                   ),
-                                  const Divider(
-                                    thickness: 1,
-                                  ),
+                                  const Divider(),
                                   const TextWidget(
                                     name:
-                                        ' The vest red front thinf og did so teh rain usuese The vest red front thinf og did so teh rain usuese The vest red front thinf og did so teh rain usuese The vest red front thinf og did so teh rain usuese  ',
-                                    color: AppColors.kWhite,
+                                        'The tiger is the largest living cat species and a member of the genus Panthera. It is most recognisable for its dark vertical stripes on orange fur with a white underside. An apex predator, it primarily preys on ungulates, such as deer and wild boa',
+                                    // color: AppColors.kWhite,
                                     fontSize: 11,
                                   )
                                 ],

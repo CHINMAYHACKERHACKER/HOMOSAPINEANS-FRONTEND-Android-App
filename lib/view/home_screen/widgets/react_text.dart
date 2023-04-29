@@ -21,9 +21,9 @@ class RectButton extends StatelessWidget {
             textStyle:
                 const TextStyle(fontWeight: FontWeight.w400, fontSize: 9),
             shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(3.0)),
-            backgroundColor: AppColors.kWhite.withOpacity(0.3),
-            foregroundColor: Colors.white,
+                borderRadius: BorderRadius.circular(5.0)),
+            // backgroundColor: AppColors.kBlack,
+            // foregroundColor: Colors.white,
           ),
           onPressed: () {},
           icon: reactbtns,

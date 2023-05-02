@@ -85,7 +85,7 @@ class CustomAppbar extends StatelessWidget {
             label: const Text('Textism'),
           ),
         ),
-        AppSize.kWidth5
+        // AppSize.kWidth5
       ],
     );
   }

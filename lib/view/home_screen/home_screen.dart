@@ -20,9 +20,8 @@ class HomeScreen extends StatelessWidget {
               children: [
                 AppSize.kHeight10,
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    AppSize.kWidth5,
                     Padding(
                       padding: const EdgeInsets.all(5.0),
                       child: SvgPicture.asset(
@@ -30,7 +29,7 @@ class HomeScreen extends StatelessWidget {
                         height: 27,
                       ),
                     ),
-                    AppSize.kWidth10,
+
                     Stack(
                       clipBehavior: Clip.none,
                       children: const [
@@ -53,7 +52,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const Spacer(),
+                    // const Spacer(),
                     const CustomAppbar(),
                   ],
                 ),

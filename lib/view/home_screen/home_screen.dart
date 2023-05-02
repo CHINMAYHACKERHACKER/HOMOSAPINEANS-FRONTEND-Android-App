@@ -106,7 +106,7 @@ class HomeScreen extends StatelessWidget {
                                     width: 40,
                                     padding: const EdgeInsets.all(5),
                                     decoration: BoxDecoration(
-                                        image: DecorationImage(
+                                        image: const DecorationImage(
                                             image: NetworkImage(
                                                 'https://www.scrolldroll.com/wp-content/uploads/2021/09/Dhanush-best-south-indian-actors-scaled.jpg'),
                                             fit: BoxFit.contain),
@@ -129,31 +129,32 @@ class HomeScreen extends StatelessWidget {
                                     // color: AppColors.kWhite,
                                   ),
                                   const Spacer(),
-                                  PopupBtn(),
+                                  const PopupBtn(),
                                 ],
                               ),
                             ),
                             Container(
                               height: 550,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                   image: DecorationImage(
                                       image: NetworkImage(
                                           'https://www.scrolldroll.com/wp-content/uploads/2021/09/Dhanush-best-south-indian-actors-scaled.jpg'),
                                       fit: BoxFit.cover)),
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(16.0),
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 8, horizontal: 5),
                               child: Column(
                                 children: [
                                   Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.center,
-                                        children: [
-                                          const RectButton(
+                                        children: const [
+                                          RectButton(
                                             reactbtns: Icon(
                                               Icons.favorite,
                                               color: Colors.red,
@@ -161,7 +162,7 @@ class HomeScreen extends StatelessWidget {
                                             ),
                                             title: 'Lovely',
                                           ),
-                                          const TextWidget(
+                                          TextWidget(
                                             name: '4999',
                                             // color: AppColors.kWhite,
                                             fontSize: 9,
@@ -171,8 +172,8 @@ class HomeScreen extends StatelessWidget {
                                       Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.center,
-                                        children: [
-                                          const RectButton(
+                                        children: const [
+                                          RectButton(
                                             reactbtns: Icon(
                                               Icons.star,
                                               color: Colors.yellow,
@@ -180,7 +181,7 @@ class HomeScreen extends StatelessWidget {
                                             ),
                                             title: 'Amazing',
                                           ),
-                                          const TextWidget(
+                                          TextWidget(
                                             name: '4999',
                                             // color: AppColors.kWhite,
                                             fontSize: 9,
@@ -190,8 +191,8 @@ class HomeScreen extends StatelessWidget {
                                       Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.center,
-                                        children: [
-                                          const RectButton(
+                                        children: const [
+                                          RectButton(
                                             reactbtns: Icon(
                                               Icons.workspace_premium_rounded,
                                               color: Colors.orange,
@@ -226,7 +227,7 @@ class HomeScreen extends StatelessWidget {
                                                   )),
                                             ),
                                           ),
-                                          TextWidget(
+                                          const TextWidget(
                                             name: '740',
                                             // color: AppColors.kWhite
                                             //     .withOpacity(0.6),
@@ -252,7 +253,7 @@ class HomeScreen extends StatelessWidget {
                                                   )),
                                             ),
                                           ),
-                                          TextWidget(
+                                          const TextWidget(
                                             name: '740',
                                             // color: AppColors.kWhite
                                             //     .withOpacity(0.6),

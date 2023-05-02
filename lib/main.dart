@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       //   bottomAppBarTheme: BottomAppBarTheme(color: AppColors.kGrey),
       //   // fontFamily: 'Chalkduster',
       // ),
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }
@@ -40,46 +40,46 @@ class ThemeClass {
       brightness: Brightness.light,
       // scaffoldBackgroundColor: Colors.white,
       cardColor: AppColors.kLightGrey,
-      colorScheme: ColorScheme.light(),
+      colorScheme: const ColorScheme.light(),
       // useMaterial3: true,
       primarySwatch: Colors.amber,
       iconButtonTheme: IconButtonThemeData(
           style: ButtonStyle(
         backgroundColor:
             MaterialStatePropertyAll(AppColors.kBlack.withOpacity(0.6)),
-        foregroundColor: MaterialStatePropertyAll(AppColors.kWhite),
+        foregroundColor: const MaterialStatePropertyAll(AppColors.kWhite),
       )),
       elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
         backgroundColor:
             MaterialStatePropertyAll(AppColors.kBlack.withOpacity(0.6)),
-        foregroundColor: MaterialStatePropertyAll(AppColors.kWhite),
+        foregroundColor: const MaterialStatePropertyAll(AppColors.kWhite),
       )),
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         backgroundColor: Colors.blue,
       ),
       typography: Typography(black: Typography.blackCupertino));
 
   static ThemeData darkTheme = ThemeData(
       brightness: Brightness.dark,
-      // scaffoldBackgroundColor: Colors.black,
+      scaffoldBackgroundColor: AppColors.kBaseColor,
       primarySwatch: Colors.amber,
       cardColor: AppColors.kLightGrey,
       iconButtonTheme: IconButtonThemeData(
           style: ButtonStyle(
         backgroundColor:
             MaterialStatePropertyAll(AppColors.kWhite.withOpacity(0.6)),
-        foregroundColor: MaterialStatePropertyAll(AppColors.kBlack),
+        foregroundColor: const MaterialStatePropertyAll(AppColors.kBlack),
       )),
       elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
         backgroundColor:
             MaterialStatePropertyAll(AppColors.kWhite.withOpacity(0.6)),
-        foregroundColor: MaterialStatePropertyAll(AppColors.kBlack),
+        foregroundColor: const MaterialStatePropertyAll(AppColors.kBlack),
       )),
       // useMaterial3: true,
-      colorScheme: ColorScheme.dark(),
-      appBarTheme: AppBarTheme(
+      colorScheme: const ColorScheme.dark(),
+      appBarTheme: const AppBarTheme(
         backgroundColor: Colors.black,
       ));
 }

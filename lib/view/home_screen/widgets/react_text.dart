@@ -17,7 +17,7 @@ class RectButton extends StatelessWidget {
       height: 28,
       child: ElevatedButton.icon(
           style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 5),
+            padding: const EdgeInsets.symmetric(horizontal: 8),
             textStyle:
                 const TextStyle(fontWeight: FontWeight.w400, fontSize: 9),
             shape: RoundedRectangleBorder(

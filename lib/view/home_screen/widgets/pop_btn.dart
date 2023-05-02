@@ -12,7 +12,7 @@ class PopupBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return PopupMenuButton(
         child: SvgPicture.asset(
-          'assets/images/Group 383.svg',
+          'assets/images/Group 493.svg',
           height: 24,
         ),
         shape: const RoundedRectangleBorder(

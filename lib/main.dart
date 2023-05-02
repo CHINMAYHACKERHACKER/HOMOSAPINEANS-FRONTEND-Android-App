@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       //   bottomAppBarTheme: BottomAppBarTheme(color: AppColors.kGrey),
       //   // fontFamily: 'Chalkduster',
       // ),
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }
@@ -40,46 +40,51 @@ class ThemeClass {
       brightness: Brightness.light,
       // scaffoldBackgroundColor: Colors.white,
       cardColor: AppColors.kLightGrey,
-      colorScheme: ColorScheme.light(),
+      colorScheme: const ColorScheme.light(),
       // useMaterial3: true,
       primarySwatch: Colors.amber,
       iconButtonTheme: IconButtonThemeData(
-          style: ButtonStyle(
-        backgroundColor:
-            MaterialStatePropertyAll(AppColors.kBlack.withOpacity(0.6)),
-        foregroundColor: MaterialStatePropertyAll(AppColors.kWhite),
-      )),
+        style: ButtonStyle(
+          backgroundColor:
+              MaterialStatePropertyAll(AppColors.kBlack.withOpacity(0.6)),
+          foregroundColor: const MaterialStatePropertyAll(AppColors.kWhite),
+        ),
+      ),
       elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ButtonStyle(
-        backgroundColor:
-            MaterialStatePropertyAll(AppColors.kBlack.withOpacity(0.6)),
-        foregroundColor: MaterialStatePropertyAll(AppColors.kWhite),
-      )),
-      appBarTheme: AppBarTheme(
+        style: ButtonStyle(
+          backgroundColor:
+              MaterialStatePropertyAll(AppColors.kBlack.withOpacity(0.6)),
+          foregroundColor: const MaterialStatePropertyAll(AppColors.kWhite),
+        ),
+      ),
+      appBarTheme: const AppBarTheme(
         backgroundColor: Colors.blue,
       ),
       typography: Typography(black: Typography.blackCupertino));
 
   static ThemeData darkTheme = ThemeData(
-      brightness: Brightness.dark,
-      // scaffoldBackgroundColor: Colors.black,
-      primarySwatch: Colors.amber,
-      cardColor: AppColors.kLightGrey,
-      iconButtonTheme: IconButtonThemeData(
-          style: ButtonStyle(
+    brightness: Brightness.dark,
+    // scaffoldBackgroundColor: Colors.black,
+    primarySwatch: Colors.amber,
+    cardColor: AppColors.kLightGrey,
+    iconButtonTheme: IconButtonThemeData(
+      style: ButtonStyle(
         backgroundColor:
             MaterialStatePropertyAll(AppColors.kWhite.withOpacity(0.6)),
-        foregroundColor: MaterialStatePropertyAll(AppColors.kBlack),
-      )),
-      elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ButtonStyle(
+        foregroundColor: const MaterialStatePropertyAll(AppColors.kBlack),
+      ),
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
         backgroundColor:
             MaterialStatePropertyAll(AppColors.kWhite.withOpacity(0.6)),
-        foregroundColor: MaterialStatePropertyAll(AppColors.kBlack),
-      )),
-      // useMaterial3: true,
-      colorScheme: ColorScheme.dark(),
-      appBarTheme: AppBarTheme(
-        backgroundColor: Colors.black,
-      ));
+        foregroundColor: const MaterialStatePropertyAll(AppColors.kBlack),
+      ),
+    ),
+    // useMaterial3: true,
+    colorScheme: const ColorScheme.dark(),
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Colors.black,
+    ),
+  );
 }

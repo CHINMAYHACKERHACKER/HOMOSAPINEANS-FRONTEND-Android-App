@@ -11,8 +11,9 @@ class CustomAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.end,
       children: [
+        AppSize.kWidth5,
         IconButton(
           padding: const EdgeInsets.all(1),
           onPressed: () {},
@@ -75,7 +76,7 @@ class CustomAppbar extends StatelessWidget {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(3.0)),
               // backgroundColor: AppColors.kGrey,
-              // foregroundColor: Colors.white,
+              foregroundColor: Color(0xffe81717),
             ),
             onPressed: () {},
             icon: const Icon(

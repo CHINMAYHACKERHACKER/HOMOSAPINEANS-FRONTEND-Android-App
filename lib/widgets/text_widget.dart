@@ -25,6 +25,7 @@ class TextWidget extends StatelessWidget {
     return Text(
       name,
       textAlign: textAlign,
+      maxLines: 3,
       style: TextStyle(
         color: color,
         fontSize: fontSize,

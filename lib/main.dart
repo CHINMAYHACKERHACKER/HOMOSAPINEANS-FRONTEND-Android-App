@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       //   bottomAppBarTheme: BottomAppBarTheme(color: AppColors.kGrey),
       //   // fontFamily: 'Chalkduster',
       // ),
-      home: const HomeScreen(),
+      home: const SignupScreen(),
     );
   }
 }
@@ -76,12 +76,12 @@ class ThemeClass {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
-        backgroundColor:
-            MaterialStatePropertyAll(AppColors.kWhite.withOpacity(0.6)),
-        foregroundColor: const MaterialStatePropertyAll(AppColors.kBlack),
+        backgroundColor: MaterialStatePropertyAll(Color(0xff28293d)),
+        foregroundColor: const MaterialStatePropertyAll(AppColors.kWhite),
       ),
     ),
     // useMaterial3: true,
+    fontFamily: 'Ysabeau',
     colorScheme: const ColorScheme.dark(),
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.black,

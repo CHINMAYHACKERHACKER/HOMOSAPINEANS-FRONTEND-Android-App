@@ -20,8 +20,8 @@ class PopupBtn extends StatelessWidget {
             Radius.circular(20.0),
           ),
         ),
-        padding: EdgeInsets.all(0),
-        color: AppColors.kBlack,
+        padding: EdgeInsets.all(5),
+        color: AppColors.kBlack.withOpacity(0.8),
         surfaceTintColor: AppColors.kWhite,
 
         // add icon, by default "3 dot" icon
@@ -29,57 +29,64 @@ class PopupBtn extends StatelessWidget {
         itemBuilder: (context) {
           return [
             PopupMenuItem<int>(
-                value: 1,
-                labelTextStyle: MaterialStatePropertyAll<TextStyle>(
-                    TextStyle(color: AppColors.kWhite)),
+                value: 5,
+                // labelTextStyle: MaterialStatePropertyAll<TextStyle>(
+                //   TextStyle(color: AppColors.kWhite),
+                // ),
                 child: TextWidget(
                   name: 'If new Connection',
                   fontSize: 13,
                 )),
             PopupMenuItem<int>(
               value: 1,
-              labelTextStyle: MaterialStatePropertyAll<TextStyle>(
-                  TextStyle(color: AppColors.kWhite)),
+              // labelTextStyle: MaterialStatePropertyAll<TextStyle>(
+              //   TextStyle(color: AppColors.kWhite),
+              // ),
               child: PopValues(
                 values: "Watch My Story",
               ),
             ),
             PopupMenuItem<int>(
               value: 1,
-              labelTextStyle: MaterialStatePropertyAll<TextStyle>(
-                  TextStyle(color: AppColors.kWhite)),
+              // labelTextStyle: MaterialStatePropertyAll<TextStyle>(
+              //   TextStyle(color: AppColors.kWhite),
+              // ),
               child: PopValues(
                 values: "Message",
               ),
             ),
             PopupMenuItem<int>(
               value: 1,
-              labelTextStyle: MaterialStatePropertyAll<TextStyle>(
-                  TextStyle(color: AppColors.kWhite)),
+              // labelTextStyle: MaterialStatePropertyAll<TextStyle>(
+              //   TextStyle(color: AppColors.kWhite),
+              // ),
               child: PopValues(
                 values: "Send Friend Request",
               ),
             ),
             PopupMenuItem<int>(
               value: 1,
-              labelTextStyle: MaterialStatePropertyAll<TextStyle>(
-                  TextStyle(color: AppColors.kWhite)),
+              // labelTextStyle: MaterialStatePropertyAll<TextStyle>(
+              //   TextStyle(color: AppColors.kWhite),
+              // ),
               child: PopValues(
                 values: "Follow",
               ),
             ),
             PopupMenuItem<int>(
               value: 1,
-              labelTextStyle: MaterialStatePropertyAll<TextStyle>(
-                  TextStyle(color: AppColors.kWhite)),
+              // labelTextStyle: MaterialStatePropertyAll<TextStyle>(
+              //   TextStyle(color: AppColors.kWhite),
+              // ),
               child: PopValues(
                 values: "Ignore",
               ),
             ),
             PopupMenuItem<int>(
               value: 1,
-              labelTextStyle: MaterialStatePropertyAll<TextStyle>(
-                  TextStyle(color: AppColors.kWhite)),
+              // labelTextStyle: MaterialStatePropertyAll<TextStyle>(
+              //   TextStyle(color: AppColors.kWhite),
+              // ),
               child: PopValues(
                 values: "Report",
               ),
@@ -111,9 +118,11 @@ class PopValues extends StatelessWidget {
       width: double.infinity,
       height: 50,
       child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
           // decoration: BoxDecoration(
-          //     // borderRadius:
-          //     //     BorderRadius.circular(8),
+
           //     ),
           // padding: EdgeInsets.all(8),
           // width: double.infinity,

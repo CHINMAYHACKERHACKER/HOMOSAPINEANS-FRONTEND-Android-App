@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:homo_sapiens/utils/colors/colors.dart';
 import 'package:homo_sapiens/utils/styles/sizedbox.dart';
+import 'package:homo_sapiens/view/home_screen/widgets/custom_drawer.dart';
 import 'package:homo_sapiens/view/home_screen/widgets/pop_btn.dart';
 import 'package:homo_sapiens/view/home_screen/widgets/react_text.dart';
 import 'package:homo_sapiens/widgets/custom_appbar.dart';
@@ -35,7 +36,7 @@ class HomeScreen extends StatelessWidget {
             Builder(
               builder: (context) => IconButton(
                 icon: SvgPicture.asset(
-                  'assets/images/Group 383.svg',
+                  'assets/images/Group 493.svg',
                   height: 27,
                 ),
                 onPressed: () => Scaffold.of(context).openDrawer(),
@@ -119,7 +120,7 @@ class HomeScreen extends StatelessWidget {
                     itemBuilder: (BuildContext context, int index) {
                       return Card(
                         margin: const EdgeInsets.symmetric(
-                            vertical: 10, horizontal: 2),
+                            vertical: 10, horizontal: 5),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(19),
                         ),
@@ -155,13 +156,23 @@ class HomeScreen extends StatelessWidget {
                                   AppSize.kWidth10,
                                   index % 2 == 0
                                       ? Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: const [
                                             TextWidget(
                                               name: '_Rashid028',
                                               textAlign: TextAlign.center,
                                               fontWeight: FontWeight.w300,
-                                              fontSize: 20,
+                                              fontSize: 16,
                                               fontFamily: 'Chalkduster',
+                                              // color: AppColors.kWhite,
+                                            ),
+                                            TextWidget(
+                                              name: 'Actor ',
+                                              textAlign: TextAlign.start,
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 12,
+                                              fontFamily: 'Ysabeau',
                                               // color: AppColors.kWhite,
                                             ),
                                           ],
@@ -333,14 +344,18 @@ class HomeScreen extends StatelessWidget {
                                     ],
                                   ),
                                   const Divider(),
-                                  ReadMoreText(
-                                    'The tiger is the largest living cat species and a member of the genus Panthera. It is most recognisable for its dark vertical stripes on orange fur with a white underside. An apex predator, it primarily preys on ungulates, such as deer and wild boa',
-                                    trimLines: 3,
-                                    lessStyle: TextStyle(
-                                        color: AppColors.kLightPrimary),
-                                    moreStyle: TextStyle(
-                                        color: AppColors.kLightPrimary),
-                                  )
+                                  Padding(
+                                    padding: const EdgeInsets.all(5.0),
+                                    child: const ReadMoreText(
+                                      'The tiger is the largest living cat species and a member of the genus Panthera. It is most recognisable for its dark vertical stripes on orange fur with a white underside. An apex predator, it primarily preys on ungulates, such as deer and wild boa The tiger is the largest living cat species and a member of the genus Panthera. It is most recognisable for its dark vertical stripes on orange fur with a white underside. An apex predator, it primarily preys on ungulates, such as deer and wild boa  ',
+                                      trimLines: 1,
+                                      trimLength: 100,
+                                      lessStyle: TextStyle(
+                                          color: AppColors.kLightPrimary),
+                                      moreStyle: TextStyle(
+                                          color: AppColors.kLightPrimary),
+                                    ),
+                                  ),
                                   // const TextWidget(
                                   //   fontFamily: 'Ysabeau',
                                   //   name:
@@ -349,6 +364,7 @@ class HomeScreen extends StatelessWidget {
 
                                   //   fontSize: 15,
                                   // )
+                                  AppSize.kHeight10,
                                 ],
                               ),
                             ),
@@ -358,49 +374,6 @@ class HomeScreen extends StatelessWidget {
                     }),
               ],
             )),
-      ),
-    );
-  }
-}
-
-class CustomDrawer extends StatelessWidget {
-  const CustomDrawer({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: Drawer(
-        // Add a ListView to the drawer. This ensures the user can scroll
-        // through the options in the drawer if there isn't enough vertical
-        // space to fit everything.
-        child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text('Drawer Header'),
-            ),
-            ListTile(
-              title: const Text('Item 1'),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-              },
-            ),
-            ListTile(
-              title: const Text('Item 2'),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-              },
-            ),
-          ],
-        ),
       ),
     );
   }

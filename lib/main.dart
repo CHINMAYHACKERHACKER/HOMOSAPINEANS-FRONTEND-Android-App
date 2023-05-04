@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       //   bottomAppBarTheme: BottomAppBarTheme(color: AppColors.kGrey),
       //   // fontFamily: 'Chalkduster',
       // ),
-      home: const SignupScreen(),
+      home:  BotomNavigationBar(key: null,),
     );
   }
 }

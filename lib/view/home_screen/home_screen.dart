@@ -333,14 +333,22 @@ class HomeScreen extends StatelessWidget {
                                     ],
                                   ),
                                   const Divider(),
-                                  const TextWidget(
-                                    fontFamily: 'Ysabeau',
-                                    name:
-                                        'The tiger is the largest living cat species and a member of the genus Panthera. It is most recognisable for its dark vertical stripes on orange fur with a white underside. An apex predator, it primarily preys on ungulates, such as deer and wild boa',
-                                    // color: AppColors.kWhite,
-
-                                    fontSize: 15,
+                                  ReadMoreText(
+                                    'The tiger is the largest living cat species and a member of the genus Panthera. It is most recognisable for its dark vertical stripes on orange fur with a white underside. An apex predator, it primarily preys on ungulates, such as deer and wild boa',
+                                    trimLines: 3,
+                                    lessStyle: TextStyle(
+                                        color: AppColors.kLightPrimary),
+                                    moreStyle: TextStyle(
+                                        color: AppColors.kLightPrimary),
                                   )
+                                  // const TextWidget(
+                                  //   fontFamily: 'Ysabeau',
+                                  //   name:
+                                  //       'The tiger is the largest living cat species and a member of the genus Panthera. It is most recognisable for its dark vertical stripes on orange fur with a white underside. An apex predator, it primarily preys on ungulates, such as deer and wild boa',
+                                  //   // color: AppColors.kWhite,
+
+                                  //   fontSize: 15,
+                                  // )
                                 ],
                               ),
                             ),

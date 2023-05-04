@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:homo_sapiens/view/home_screen/home_screen.dart';
 
 class ButtonWidget extends StatelessWidget {
   const ButtonWidget({
@@ -27,7 +28,7 @@ class ButtonWidget extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => naving));
+              context, MaterialPageRoute(builder: (context) => HomeScreen()));
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor,

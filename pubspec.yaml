@@ -71,16 +71,21 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
+    - family: DarumadropOne
+      fonts:
+        - asset: assets/fonts/DarumadropOne-Regular.ttf
+        - asset: assets/fonts/DarumadropOne-Regular.ttf
+          style: italic
+    - family: Ysabeau
+      fonts:
+        - asset: assets/fonts/Ysabeau-Regular.ttf
+        - asset: assets/fonts/Ysabeau-Regular.ttf
+          weight: 700
     - family: Chalkduster
       fonts:
         - asset: assets/fonts/Chalkduster.ttf
         - asset: assets/fonts/Chalkduster.ttf
-          style: italic
-    - family: Chalkduster
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+          weight: 700
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -115,6 +115,13 @@ class SignupScreen extends StatelessWidget {
                           hintStyle: TextStyle(
                             color: AppColors.kWhite.withOpacity(0.3),
                           ),
+                          hintText: "Proffession",
+                        ),
+                        AppSize.kHeight20,
+                        TextfieldWidget(
+                          hintStyle: TextStyle(
+                            color: AppColors.kWhite.withOpacity(0.3),
+                          ),
                           hintText: "Date of Birth",
                         ),
                         AppSize.kHeight20,

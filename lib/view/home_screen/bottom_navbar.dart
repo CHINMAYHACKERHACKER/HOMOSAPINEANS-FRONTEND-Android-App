@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:homo_sapiens/view/home_screen/home_screen.dart';
 
 class BotomNavigationBar extends StatefulWidget {
+  const BotomNavigationBar({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return _BotomNavigationBarState();
@@ -11,9 +13,9 @@ class BotomNavigationBar extends StatefulWidget {
 class _BotomNavigationBarState extends State<BotomNavigationBar> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    HomeScreen(),
-    HomeScreen(),
-    HomeScreen(),
+    const HomeScreen(),
+    const HomeScreen(),
+    const HomeScreen(),
   ];
 
   @override
@@ -26,7 +28,7 @@ class _BotomNavigationBarState extends State<BotomNavigationBar> {
           onTabTapped(1);
         },
         tooltip: "Add Savings",
-        child: Icon(Icons.attach_money, color: Colors.indigo),
+        child: const Icon(Icons.attach_money, color: Colors.indigo),
         elevation: 4.0,
         backgroundColor: Colors.white,
       ),
@@ -35,16 +37,16 @@ class _BotomNavigationBarState extends State<BotomNavigationBar> {
           onTap: onTabTapped,
           currentIndex: _currentIndex,
           items: [
-            BottomNavigationBarItem(
-              icon: const Icon(Icons.home),
+            const BottomNavigationBarItem(
+              icon: Icon(Icons.home),
               label: "Home",
             ),
-            BottomNavigationBarItem(
-              icon: const Icon(Icons.attach_money),
+            const BottomNavigationBarItem(
+              icon: Icon(Icons.attach_money),
               label: "Save",
             ),
-            BottomNavigationBarItem(
-              icon: const Icon(Icons.account_circle),
+            const BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle),
               label: "Profile",
             ),
           ]),

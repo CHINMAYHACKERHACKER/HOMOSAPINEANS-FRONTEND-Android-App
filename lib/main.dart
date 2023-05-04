@@ -64,7 +64,7 @@ class ThemeClass {
 
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
-    // scaffoldBackgroundColor: Colors.black,
+    scaffoldBackgroundColor: AppColors.kBaseColor,
     primarySwatch: Colors.amber,
     cardColor: AppColors.kLightGrey,
     iconButtonTheme: IconButtonThemeData(

@@ -11,16 +11,12 @@ class PopupBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton(
-        child: SvgPicture.asset(
-          'assets/images/Group 493.svg',
-          height: 24,
-        ),
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(20.0),
           ),
         ),
-        padding: EdgeInsets.all(5),
+        padding: const EdgeInsets.all(5),
         color: AppColors.kBlack.withOpacity(0.8),
         surfaceTintColor: AppColors.kWhite,
 
@@ -28,7 +24,7 @@ class PopupBtn extends StatelessWidget {
         // icon: Icon(Icons.book)
         itemBuilder: (context) {
           return [
-            PopupMenuItem<int>(
+            const PopupMenuItem<int>(
                 value: 5,
                 // labelTextStyle: MaterialStatePropertyAll<TextStyle>(
                 //   TextStyle(color: AppColors.kWhite),
@@ -37,7 +33,7 @@ class PopupBtn extends StatelessWidget {
                   name: 'If new Connection',
                   fontSize: 13,
                 )),
-            PopupMenuItem<int>(
+            const PopupMenuItem<int>(
               value: 1,
               // labelTextStyle: MaterialStatePropertyAll<TextStyle>(
               //   TextStyle(color: AppColors.kWhite),
@@ -46,7 +42,7 @@ class PopupBtn extends StatelessWidget {
                 values: "Watch My Story",
               ),
             ),
-            PopupMenuItem<int>(
+            const PopupMenuItem<int>(
               value: 1,
               // labelTextStyle: MaterialStatePropertyAll<TextStyle>(
               //   TextStyle(color: AppColors.kWhite),
@@ -55,7 +51,7 @@ class PopupBtn extends StatelessWidget {
                 values: "Message",
               ),
             ),
-            PopupMenuItem<int>(
+            const PopupMenuItem<int>(
               value: 1,
               // labelTextStyle: MaterialStatePropertyAll<TextStyle>(
               //   TextStyle(color: AppColors.kWhite),
@@ -64,7 +60,7 @@ class PopupBtn extends StatelessWidget {
                 values: "Send Friend Request",
               ),
             ),
-            PopupMenuItem<int>(
+            const PopupMenuItem<int>(
               value: 1,
               // labelTextStyle: MaterialStatePropertyAll<TextStyle>(
               //   TextStyle(color: AppColors.kWhite),
@@ -73,7 +69,7 @@ class PopupBtn extends StatelessWidget {
                 values: "Follow",
               ),
             ),
-            PopupMenuItem<int>(
+            const PopupMenuItem<int>(
               value: 1,
               // labelTextStyle: MaterialStatePropertyAll<TextStyle>(
               //   TextStyle(color: AppColors.kWhite),
@@ -82,7 +78,7 @@ class PopupBtn extends StatelessWidget {
                 values: "Ignore",
               ),
             ),
-            PopupMenuItem<int>(
+            const PopupMenuItem<int>(
               value: 1,
               // labelTextStyle: MaterialStatePropertyAll<TextStyle>(
               //   TextStyle(color: AppColors.kWhite),
@@ -101,7 +97,11 @@ class PopupBtn extends StatelessWidget {
           } else if (value == 2) {
             print("Logout menu is selected.");
           }
-        });
+        },
+        child: SvgPicture.asset(
+          'assets/images/Group 493.svg',
+          height: 24,
+        ));
   }
 }
 
@@ -126,7 +126,7 @@ class PopValues extends StatelessWidget {
           //     ),
           // padding: EdgeInsets.all(8),
           // width: double.infinity,
-          color: Color.fromARGB(255, 59, 59, 59),
+          color: const Color.fromARGB(255, 59, 59, 59),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 4),
             child: Center(

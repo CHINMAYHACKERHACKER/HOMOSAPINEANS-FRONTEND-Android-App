@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:homo_sapiens/utils/colors/colors.dart';
 import 'package:homo_sapiens/utils/styles/sizedbox.dart';
 
 class CustomAppbar extends StatelessWidget {
@@ -76,7 +75,7 @@ class CustomAppbar extends StatelessWidget {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(3.0)),
               // backgroundColor: AppColors.kGrey,
-              foregroundColor: Color(0xffe81717),
+              foregroundColor: Colors.white,
             ),
             onPressed: () {},
             icon: const Icon(

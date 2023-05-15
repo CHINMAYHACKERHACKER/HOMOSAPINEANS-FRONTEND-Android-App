@@ -46,10 +46,10 @@ class HomeScreen extends StatelessWidget {
               clipBehavior: Clip.none,
               children: const [
                 Text(
-                  'E=HOMO SAPIENS',
+                  'E=homoSapiens',
                   style: TextStyle(
                     fontSize: 17,
-                    // color: AppColors.kWhite,
+                    color: Color.fromARGB(255, 255, 255, 255),
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -88,28 +88,52 @@ class HomeScreen extends StatelessWidget {
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (BuildContext context, int index) {
-                        return Container(
-                          width: 57,
-                          margin: const EdgeInsets.all(6),
-                          decoration: BoxDecoration(
-                            color: AppColors.kDarkPrimary,
-                            image: (index == 0)
-                                ? const DecorationImage(
-                                    image: NetworkImage(
-                                        'https://1.bp.blogspot.com/-PfQCgUo2U3A/X7XSmSUL9HI/AAAAAAAACkc/kAgYhIGd2hwjqwTsOdgE2efXPopSvFQlACLcBGAsYHQ/w1200-h630-p-k-no-nu/Dulquer%2BSalmaan%2BHit%2BAnd%2BFlop%2BMovies%2BList.jpg'),
-                                    fit: BoxFit.cover)
-                                : index % 2 == 0
-                                    ? const DecorationImage(
-                                        image: NetworkImage(
-                                            'https://1.bp.blogspot.com/-PfQCgUo2U3A/X7XSmSUL9HI/AAAAAAAACkc/kAgYhIGd2hwjqwTsOdgE2efXPopSvFQlACLcBGAsYHQ/w1200-h630-p-k-no-nu/Dulquer%2BSalmaan%2BHit%2BAnd%2BFlop%2BMovies%2BList.jpg'),
-                                        fit: BoxFit.cover)
-                                    : const DecorationImage(
-                                        image: NetworkImage(
-                                            'https://upload.wikimedia.org/wikipedia/commons/b/be/Mamta_Mohandas_Red_FM_2020.jpg'),
-                                        fit: BoxFit.cover),
-                            borderRadius: BorderRadius.circular(19),
-                          ),
-                        );
+                        return index == 0
+                            ? Container(
+                                width: 57,
+                                margin: const EdgeInsets.all(6),
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 34, 34, 34),
+                                    // image: index % 2 == 0
+                                    //     ? const DecorationImage(
+                                    //         image: NetworkImage(
+                                    //             'https://1.bp.blogspot.com/-PfQCgUo2U3A/X7XSmSUL9HI/AAAAAAAACkc/kAgYhIGd2hwjqwTsOdgE2efXPopSvFQlACLcBGAsYHQ/w1200-h630-p-k-no-nu/Dulquer%2BSalmaan%2BHit%2BAnd%2BFlop%2BMovies%2BList.jpg'),
+                                    //         fit: BoxFit.cover)
+                                    //     : const DecorationImage(
+                                    //         image: NetworkImage(
+                                    //             'https://upload.wikimedia.org/wikipedia/commons/b/be/Mamta_Mohandas_Red_FM_2020.jpg'),
+                                    //         fit: BoxFit.cover),
+                                    borderRadius: BorderRadius.circular(19),
+                                    border: Border.all(
+                                        color: AppColors.kWhite, width: 2)),
+                                child: const Center(
+                                    child: Text(
+                                  "What's new",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: AppColors.kDarkPrimary,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                )),
+                              )
+                            : Container(
+                                width: 57,
+                                margin: const EdgeInsets.all(6),
+                                decoration: BoxDecoration(
+                                  color: AppColors.kDarkPrimary,
+                                  image: index % 2 == 0
+                                      ? const DecorationImage(
+                                          image: NetworkImage(
+                                              'https://1.bp.blogspot.com/-PfQCgUo2U3A/X7XSmSUL9HI/AAAAAAAACkc/kAgYhIGd2hwjqwTsOdgE2efXPopSvFQlACLcBGAsYHQ/w1200-h630-p-k-no-nu/Dulquer%2BSalmaan%2BHit%2BAnd%2BFlop%2BMovies%2BList.jpg'),
+                                          fit: BoxFit.cover)
+                                      : const DecorationImage(
+                                          image: NetworkImage(
+                                              'https://upload.wikimedia.org/wikipedia/commons/b/be/Mamta_Mohandas_Red_FM_2020.jpg'),
+                                          fit: BoxFit.cover),
+                                  borderRadius: BorderRadius.circular(19),
+                                ),
+                              );
                       }),
                 ),
                 AppSize.kHeight10,
@@ -171,7 +195,7 @@ class HomeScreen extends StatelessWidget {
                                               name: 'Actor ',
                                               textAlign: TextAlign.start,
                                               fontWeight: FontWeight.w400,
-                                              fontSize: 12,
+                                              fontSize: 13,
                                               fontFamily: 'Ysabeau',
                                               // color: AppColors.kWhite,
                                             ),
@@ -344,9 +368,9 @@ class HomeScreen extends StatelessWidget {
                                     ],
                                   ),
                                   const Divider(),
-                                  Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                    child: const ReadMoreText(
+                                  const Padding(
+                                    padding: EdgeInsets.all(5.0),
+                                    child: ReadMoreText(
                                       'The tiger is the largest living cat species and a member of the genus Panthera. It is most recognisable for its dark vertical stripes on orange fur with a white underside. An apex predator, it primarily preys on ungulates, such as deer and wild boa The tiger is the largest living cat species and a member of the genus Panthera. It is most recognisable for its dark vertical stripes on orange fur with a white underside. An apex predator, it primarily preys on ungulates, such as deer and wild boa  ',
                                       trimLines: 1,
                                       trimLength: 100,

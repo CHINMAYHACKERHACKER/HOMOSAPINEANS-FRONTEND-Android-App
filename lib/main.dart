@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:homo_sapiens/utils/colors/colors.dart';
-import 'package:homo_sapiens/view/home_screen/bottom_navbar.dart';
-import 'package:homo_sapiens/view/home_screen/home_screen.dart';
-import 'package:homo_sapiens/view/login_screen/login_screen.dart';
-import 'package:homo_sapiens/view/signup_screen/signup_screen.dart';
+import 'package:homo_sapiens/view/personal_profile/personal_profile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.dark,
       theme: ThemeClass.lightTheme,
       darkTheme: ThemeClass.darkTheme,
       // theme: ThemeData(
@@ -30,7 +27,7 @@ class MyApp extends StatelessWidget {
       //   bottomAppBarTheme: BottomAppBarTheme(color: AppColors.kGrey),
       //   // fontFamily: 'Chalkduster',
       // ),
-      home: const SignupScreen(),
+      home: const PersonalProfile(),
     );
   }
 }
@@ -74,10 +71,10 @@ class ThemeClass {
         foregroundColor: const MaterialStatePropertyAll(AppColors.kBlack),
       ),
     ),
-    elevatedButtonTheme: ElevatedButtonThemeData(
+    elevatedButtonTheme: const ElevatedButtonThemeData(
       style: ButtonStyle(
         backgroundColor: MaterialStatePropertyAll(Color(0xff28293d)),
-        foregroundColor: const MaterialStatePropertyAll(AppColors.kWhite),
+        foregroundColor: MaterialStatePropertyAll(AppColors.kWhite),
       ),
     ),
     // useMaterial3: true,

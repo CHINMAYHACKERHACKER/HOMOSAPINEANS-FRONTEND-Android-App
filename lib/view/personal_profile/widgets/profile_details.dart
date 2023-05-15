@@ -28,7 +28,7 @@ class ProfileFollowingDetails extends StatelessWidget {
                 ),
                 TextWidget(
                   name: details,
-                  color: AppColors.kWhite.withOpacity(0.3),
+                  color: AppColors.kWhite,
                 ),
               ],
             ),

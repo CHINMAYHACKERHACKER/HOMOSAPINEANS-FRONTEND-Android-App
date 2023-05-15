@@ -38,11 +38,21 @@ class MyApp extends StatelessWidget {
     //     MediaQuery.of(context).platformBrightness == Brightness.dark;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.dark,
-      // themeMode: ThemeMode.system,
+      themeMode: ThemeMode.system,
       theme: ThemeClass.lightTheme,
       darkTheme: ThemeClass.darkTheme,
-      home: BotomNavigationBar(),
+      // theme: ThemeData(
+      //   useMaterial3: true,
+
+      //   scaffoldBackgroundColor: AppColors.kBaseColor,
+      //   primarySwatch: Colors.blue,
+      //   appBarTheme: const AppBarTheme(
+      //       backgroundColor: AppColors.kBaseColor,
+      //       foregroundColor: AppColors.kWhite),
+      //   bottomAppBarTheme: BottomAppBarTheme(color: AppColors.kGrey),
+      //   // fontFamily: 'Chalkduster',
+      // ),
+      home: const SignupScreen(),
     );
   }
 }

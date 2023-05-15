@@ -52,25 +52,23 @@ class PersonalProfile extends StatelessWidget {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
-                                  Flexible(
-                                    child: ElevatedButton(
-                                      onPressed: () {},
-                                      style: ElevatedButton.styleFrom(
-                                        backgroundColor:
-                                            AppColors.kLightPrimary,
-                                      ),
-                                      child: const TextWidget(name: "My Story"),
+                                  // Flexible(
+                                  //   child: ElevatedButton(
+                                  //     onPressed: () {},
+                                  //     style: ElevatedButton.styleFrom(
+                                  //       backgroundColor:
+                                  //           AppColors.kLightPrimary,
+                                  //     ),
+                                  //     child: const TextWidget(name: "My Story"),
+                                  //   ),
+                                  // ),
+                                  ElevatedButton(
+                                    onPressed: () {},
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: AppColors.kLightPrimary,
                                     ),
-                                  ),
-                                  Flexible(
-                                    child: ElevatedButton(
-                                      onPressed: () {},
-                                      style: ElevatedButton.styleFrom(
-                                        backgroundColor:
-                                            AppColors.kLightPrimary,
-                                      ),
-                                      child: const TextWidget(name: "Friend"),
-                                    ),
+                                    child:
+                                        const TextWidget(name: "Make Friend ?"),
                                   ),
                                   Flexible(
                                     child: ElevatedButton(
@@ -128,11 +126,11 @@ class PersonalProfile extends StatelessWidget {
                                 ),
                               ),
                               AppSize.kHeight20,
-                              Row(
-                                children: const [
-                                  ButtonPagesWidget(name: "E = Account Page"),
-                                ],
-                              ),
+                              // Row(
+                              //   children: const [
+                              //     ButtonPagesWidget(name: "E = Account Page"),
+                              //   ],
+                              // ),
                             ],
                           ),
                         ),
@@ -159,7 +157,7 @@ class PersonalProfile extends StatelessWidget {
                   Container(
                     width: double.infinity,
                     padding: const EdgeInsets.all(10),
-                    color: AppColors.kGreen,
+                    color: AppColors.kWhite.withOpacity(0.2),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
@@ -167,7 +165,7 @@ class PersonalProfile extends StatelessWidget {
                           name: 'About me',
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
-                          color: AppColors.kDarkPrimary,
+                          color: AppColors.kWhite,
                         ),
                         TextWidget(
                             name:
@@ -217,6 +215,30 @@ class PersonalProfile extends StatelessWidget {
                               name:
                                   "Write about ur profession & Company story - Home sapiens is social and business media platform, where it allows to connects world people, professions, businesses, Institutes, other various industries for business transaction"),
                         )
+                      ],
+                    ),
+                  ),
+                  AppSize.kHeight20,
+                  CommonGridViewWidget(
+                    itemCount: 6,
+                    text: "My Images",
+                    subText: "All Images",
+                    iconData: Icons.image,
+                    widget: Column(
+                      children: [
+                        Container(
+                          height: 100,
+                          decoration: BoxDecoration(
+                              color: AppColors.kLightPrimary,
+                              borderRadius: BorderRadius.circular(10),
+                              image: const DecorationImage(
+                                  image: NetworkImage(
+                                      "https://media.istockphoto.com/id/1291835612/photo/handsome-man-with-shopping-bags-using-smart-phone-outdoors-in-the-city.jpg?s=170667a&w=0&k=20&c=_oWV76i2G5jCm2IUYNs6ek4wu-gJu0mYwYDRZ1_Toqc="),
+                                  fit: BoxFit.cover)),
+                        ),
+                        AppSize.kHeight5,
+                        const TextWidget(name: "Aliana Stew"),
+                        // const TextWidget(name: "Father"),
                       ],
                     ),
                   ),

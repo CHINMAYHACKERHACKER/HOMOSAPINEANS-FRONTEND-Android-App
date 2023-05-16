@@ -1,281 +1,329 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:homo_sapiens/utils/colors/colors.dart';
 import 'package:homo_sapiens/utils/styles/sizedbox.dart';
+import 'package:homo_sapiens/view/chat_screen/chat_settings.dart';
+import 'package:homo_sapiens/widgets/text_widget.dart';
 
 class ChatScreen extends StatelessWidget {
-  const ChatScreen({super.key});
+  const ChatScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('widget.username'),
-        // backgroundColor: ColorConstrants.text,
-        // leading: IconButton(
-        //   icon: Icon(Icons.arrow_back),
-        //   onPressed: () {
-        //     // Handle navigation manually
-        //     Navigator.push(
-        //         context,
-        //         MaterialPageRoute(
-        //             builder: (context) => RecentChat(
-        //                   currentid: value.userdata!.id,
-        //                 )));
-        //     // Navigator.pop(context);
-        //   },
-        // ),
+        toolbarHeight: 70,
+        title: const Text('Adhmi'),
+        actions: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.call_outlined,
+                size: 20,
+              ),
+              TextWidget(
+                name: 'call',
+                fontSize: 10,
+              ),
+            ],
+          ),
+          AppSize.kWidth10,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.video_call,
+                size: 20,
+              ),
+              TextWidget(
+                name: 'Video Call',
+                fontSize: 10,
+              ),
+            ],
+          ),
+          AppSize.kWidth10,
+          InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ChatSettings()));
+            },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.settings_outlined,
+                  size: 20,
+                ),
+                TextWidget(
+                  name: 'Settings',
+                  fontSize: 10,
+                ),
+              ],
+            ),
+          ),
+          AppSize.kWidth10,
+        ],
       ),
       body: Column(
         children: [
-          // Container(
-          //   margin: const EdgeInsets.all(5),
-          //   padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-          //   decoration: const BoxDecoration(
-          //       borderRadius: BorderRadius.only(
-          //     bottomLeft: Radius.circular(8),
-          //     bottomRight: Radius.circular(8),
-          //     topLeft: Radius.circular(8),
-          //     topRight: Radius.circular(8),
-          //   )),
-          //   child: const Text(
-          //     '',
-          //     style: TextStyle(
-          //       fontSize: 15,
-          //     ),
-          //   ),
-          // ),
-
-          // value2.isLoading == true
-          //     ? const Expanded(
-          //         child: Center(child: CircularProgressIndicator()))
-          //     : value2.chatlist.isEmpty
-          //         ?
-          // const Expanded(
-          //     child: Center(
-          //       child: Text("No Conversation happend Till Now"),
-          //     ),
-          //   )
-          // :
+          const CircleAvatar(
+            radius: 30,
+            backgroundImage: NetworkImage(
+              'https://staticimg.spicyonion.com/images/profile/person/unni-mukundan/7Pn9GASysyTG6ZnPhsuRq4ESArC.jpg',
+            ),
+          ),
           Expanded(
             child: ListView.builder(
-              // controller: _scrollController,
-              // shrinkWrap: true,
-              // physics: const ScrollPhysics(),
               itemCount: 10,
+              shrinkWrap: true,
+              padding: EdgeInsets.only(top: 10, bottom: 10),
+              physics: ScrollPhysics(),
               itemBuilder: (context, index) {
-                return Column(
-                  children: [
-                    // value2.chatlist[index].sender !=
-                    //         value.userdata?.id
-                    index % 2 == 0
-                        ? Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                                Flexible(
-                                  child: Container(
-                                    margin: const EdgeInsets.all(5),
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 12, vertical: 0),
-                                    decoration: const BoxDecoration(
-                                        color: Color(0xff2b9224),
-                                        borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(15),
-                                          bottomRight: Radius.circular(20),
-                                          topRight: Radius.circular(20),
-                                        )),
-                                    child: Column(
-                                      children: [
-                                        Align(
-                                          alignment: Alignment.bottomRight,
-                                          child: IconButton(
-                                              onPressed: () {},
-                                              icon: Icon(
-                                                Icons.more_horiz,
-                                                color: AppColors.kWhite,
-                                              )),
-                                        ),
-                                        Text(
-                                          'Hai Homo what happend ',
-                                          style: const TextStyle(
-                                              fontSize: 15,
-                                              color: Colors.white),
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            Icon(
-                                              Icons.done_sharp,
-                                              color: Colors.white,
-                                              size: 12,
-                                            ),
-                                            AppSize.kWidth5,
-                                            Text(
-                                              '5.22 Pm ',
-                                              style: const TextStyle(
-                                                  fontSize: 8,
-                                                  color: Colors.white),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                final isSender = index % 2 == 0;
+                return Container(
+                  padding:
+                      EdgeInsets.only(left: 14, right: 14, top: 10, bottom: 10),
+                  child: Align(
+                    alignment:
+                        (isSender ? Alignment.topLeft : Alignment.topRight),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(15),
+                            bottomRight:
+                                isSender ? Radius.circular(15) : Radius.zero,
+                            topRight: Radius.circular(15),
+                            bottomLeft:
+                                isSender ? Radius.zero : Radius.circular(15),
+                          ),
+                          color: (isSender
+                              ? const Color(0xff2b9224)
+                              : const Color(0xff3f51b5))),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 5,
+                      ),
+                      child: Wrap(
+                        crossAxisAlignment: WrapCrossAlignment.end,
+                        children: [
+                          SizedBox(
+                            child: Text(
+                              'a Now,dfdfkmdkfm dfdkfndknfkd dkfndknfkdf fkdnfkdnfkndf dknfdknfdk dknfkdnfkd dfndkfnkdnfkn',
+                              style: TextStyle(fontSize: 15),
+                            ),
+                          ),
+                          AppSize.kWidth10,
+                          Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                const Icon(
+                                  Icons.more_horiz,
+                                  color: AppColors.kWhite,
                                 ),
-                                const SizedBox(
-                                  width: 80,
+                                Wrap(
+                                  crossAxisAlignment: WrapCrossAlignment.end,
+                                  children: [
+                                    const Icon(
+                                      Icons.done_all_sharp,
+                                      color: Colors.blue,
+                                      size: 12,
+                                    ),
+                                    AppSize.kWidth5,
+                                    const Text(
+                                      '5.22 Pm',
+                                      style: TextStyle(
+                                        fontSize: 10,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ])
-                        : Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              const SizedBox(
-                                width: 80,
-                              ),
-                              Flexible(
-                                child: Container(
-                                  margin: const EdgeInsets.all(5),
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 12, vertical: 10),
-                                  decoration: const BoxDecoration(
-                                      color: Color(0xff3f51b5),
-                                      borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(15),
-                                        bottomRight: Radius.circular(15),
-                                        topLeft: Radius.circular(15),
-                                      )),
-                                  child: Column(
-                                    children: [
-                                      Align(
-                                        alignment: Alignment.bottomRight,
-                                        child: IconButton(
-                                            onPressed: () {},
-                                            icon: Icon(
-                                              Icons.more_horiz,
-                                              color: AppColors.kWhite,
-                                            )),
-                                      ),
-                                      Text(
-                                        'Hai Homo ',
-                                        style: const TextStyle(
-                                            fontSize: 15, color: Colors.white),
-                                      ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        children: [
-                                          Icon(
-                                            Icons.done_all_sharp,
-                                            color: Colors.blue,
-                                            size: 12,
-                                          ),
-                                          AppSize.kWidth5,
-                                          Text(
-                                            '5.22 Pm ',
-                                            style: const TextStyle(
-                                                fontSize: 8,
-                                                color: Colors.white),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                  ],
+                        ],
+                      ),
+                    ),
+                  ),
                 );
               },
             ),
           ),
-
           Row(
             children: [
+              IconButton(
+                  onPressed: () {
+                    showModalBottomSheet<void>(
+                      shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(9))),
+                      context: context,
+                      builder: (BuildContext context) {
+                        return Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: SizedBox(
+                            height: 170,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                // Row(
+                                //   mainAxisAlignment:
+                                //       MainAxisAlignment.spaceBetween,
+                                //   children: [
+                                //     AppSize.kWidth30,
+                                //     IconButton(
+                                //       onPressed: () => Navigator.pop(context),
+                                //       icon: const Icon(Icons.close),
+                                //     ),
+                                //     AppSize.kWidth20,
+                                //   ],
+                                // ),
+                                Wrap(
+                                  children: [
+                                    CustomIconwidget(
+                                      text: 'Attachment',
+                                      Iconses: Icon(Icons.attachment_rounded),
+                                    ),
+                                    CustomIconwidget(
+                                      text: 'Camera',
+                                      Iconses: Icon(Icons.camera_alt_outlined),
+                                    ),
+                                    CustomIconwidget(
+                                      text: 'Video',
+                                      Iconses: Icon(Icons.videocam_outlined),
+                                    ),
+                                    CustomIconwidget(
+                                      text: 'Gallery',
+                                      Iconses: Icon(Icons.image_outlined),
+                                    ),
+                                    CustomIconwidget(
+                                      text: 'Audio',
+                                      Iconses: Icon(Icons.audiotrack_rounded),
+                                    ),
+                                    CustomIconwidget(
+                                      text: 'Contact',
+                                      Iconses:
+                                          Icon(Icons.contact_page_outlined),
+                                    ),
+                                    CustomIconwidget(
+                                      text: 'Location',
+                                      Iconses: Icon(Icons.location_on_outlined),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    );
+                  },
+                  icon: Icon(Icons.add_circle_outline_rounded)),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: TextField(
-                    // controller: value2.messageController,
                     decoration: InputDecoration(
-                      // prefixIcon: IconButton(
-                      //   onPressed: () {
-                      //     log(widget.id);
-                      //   },
-                      //   icon: const Icon(Icons.emoji_emotions_outlined),
-                      // ),
                       contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 4),
-                      hintText: 'Type your message',
-                      focusedBorder: const OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey)),
+                        horizontal: 10,
+                        vertical: 4,
+                      ),
+                      fillColor: AppColors.kGrey,
+                      filled: true,
+                      hintText: 'Write a message..',
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(12)),
+                      suffixIcon: InkWell(
+                          onTap: () {},
+                          onLongPress: () {
+                            showModalBottomSheet<void>(
+                                shape: const RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(9))),
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: SizedBox(
+                                          height: 190,
+                                          child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceAround,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: <Widget>[
+                                                Text('Schedule time'),
+                                                ListTile(
+                                                  leading: Text('Date'),
+                                                  trailing: IconButton(
+                                                      onPressed: () {},
+                                                      icon: Icon(Icons
+                                                          .calendar_today_sharp)),
+                                                ),
+                                                ListTile(
+                                                  leading: Text('Time'),
+                                                  trailing: IconButton(
+                                                      onPressed: () {},
+                                                      icon: Icon(Icons
+                                                          .access_time_filled_sharp)),
+                                                ),
+                                                ElevatedButton(
+                                                    onPressed: () {},
+                                                    child: Text('Ok'))
+                                              ])));
+                                });
+                          },
+                          child: Icon(Icons.send_rounded)),
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide.none),
                       border: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                            color: Color.fromARGB(255, 245, 209, 206),
-                          ),
-                          borderRadius: BorderRadius.circular(10)),
+                        borderSide: const BorderSide(
+                          color: Color.fromARGB(255, 245, 209, 206),
+                        ),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
                     ),
                   ),
                 ),
               ),
-              // const SizedBox(width: 10),
-              // isloading == false
-              //     ? IconButton(
-              //         onPressed: () async {
-              //           // startConversation()async
-              //           if (value2.messageController.text.isEmpty) {
-              //             ScaffoldMessenger.of(context)
-              //                 .showSnackBar(const SnackBar(
-              //               content:
-              //                   Text("Write Something to send The Message!"),
-              //               duration: Duration(seconds: 1),
-              //               backgroundColor: ColorConstrants.text,
-              //             ));
-              //             return;
-              //           } else {
-              //             setState(() {
-              //               isloading = true;
-              //             });
-              //             log(value.userdata!.id.toString());
-              //             Dio dio = Dio();
-              //             var send = await dio.post(
-              //                 ApiBaseUrl().baseUrl +
-              //                     ApiEndpoints.conversation,
-              //                 data: {
-              //                   "sender": value.userdata!.id,
-              //                   "reciever": widget.id,
-              //                   "text": value2.messageController.text
-              //                 });
-              //             setState(() {
-              //               value2.chatlist.add(ChatListModel(
-              //                 messageId: send.data['messageId'],
-              //                 sender: value.userdata!.id,
-              //                 text: value2.messageController.text,
-              //                 createdAt: DateTime.now(),
-              //               ));
-              //               isloading = true;
-              //               // _scrollController
-              //               //     .jumpTo(_scrollController.position.maxScrollExtent);
-              //               value2.messageController.clear();
-              //             });
-
-              //             log(send.data.toString());
-              //             _scrollDown();
-              //           }
-              //           setState(() {
-              //             isloading = false;
-              //           });
-              //         },
-              //         icon: const Icon(Icons.send_rounded),
-              //       )
-              //     : Padding(
-              //         padding: const EdgeInsets.all(8.0),
-              //         child: CircularProgressIndicator(),
-              //       )
+              IconButton(onPressed: () {}, icon: Icon(Icons.mic_none_rounded)),
             ],
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class CustomIconwidget extends StatelessWidget {
+  final String text;
+
+  final Icon Iconses;
+  const CustomIconwidget({
+    super.key,
+    required this.text,
+    required this.Iconses,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
+      child: Column(
+        children: [
+          CircleAvatar(
+            radius: 25,
+            backgroundColor: Colors.black.withOpacity(0.4),
+            child: IconButton(
+                color: Colors.white, onPressed: () {}, icon: Iconses),
+          ),
+          Text(
+            text,
+            style: TextStyle(fontSize: 12),
+          )
         ],
       ),
     );

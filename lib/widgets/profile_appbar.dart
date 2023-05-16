@@ -9,15 +9,15 @@ PreferredSizeWidget profileAppBarWidget(String text, context) {
       name: text,
       fontWeight: FontWeight.bold,
     ),
-    leading: IconButton(
-      onPressed: () {
-        Navigator.of(context).pop();
-      },
-      icon: const Icon(
-        Icons.arrow_back,
-        color: AppColors.kWhite,
-      ),
-    ),
+    // leading: IconButton(
+    //   onPressed: () {
+    //     Navigator.of(context).pop();
+    //   },
+    //   icon: const Icon(
+    //     Icons.arrow_back,
+    //     color: AppColors.kWhite,
+    //   ),
+    // ),
     actions: [
       IconButton(
         onPressed: () {},

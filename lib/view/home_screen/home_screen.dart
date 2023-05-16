@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        leadingWidth: 200,
+        leadingWidth: 220,
         // leading: Builder(
         //   builder: (context) => IconButton(
         //     icon: SvgPicture.asset(
@@ -48,7 +48,7 @@ class HomeScreen extends StatelessWidget {
                 Text(
                   'E=homoSapiens',
                   style: TextStyle(
-                    fontSize: 17,
+                    fontSize: 23,
                     color: Color.fromARGB(255, 255, 255, 255),
                     fontWeight: FontWeight.w500,
                   ),
@@ -90,29 +90,30 @@ class HomeScreen extends StatelessWidget {
                       itemBuilder: (BuildContext context, int index) {
                         return index == 0
                             ? Container(
-                                width: 57,
+                                width: 69,
                                 margin: const EdgeInsets.all(6),
                                 decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 34, 34, 34),
-                                    // image: index % 2 == 0
-                                    //     ? const DecorationImage(
-                                    //         image: NetworkImage(
-                                    //             'https://1.bp.blogspot.com/-PfQCgUo2U3A/X7XSmSUL9HI/AAAAAAAACkc/kAgYhIGd2hwjqwTsOdgE2efXPopSvFQlACLcBGAsYHQ/w1200-h630-p-k-no-nu/Dulquer%2BSalmaan%2BHit%2BAnd%2BFlop%2BMovies%2BList.jpg'),
-                                    //         fit: BoxFit.cover)
-                                    //     : const DecorationImage(
-                                    //         image: NetworkImage(
-                                    //             'https://upload.wikimedia.org/wikipedia/commons/b/be/Mamta_Mohandas_Red_FM_2020.jpg'),
-                                    //         fit: BoxFit.cover),
-                                    borderRadius: BorderRadius.circular(19),
-                                    border: Border.all(
-                                        color: AppColors.kWhite, width: 2)),
+                                  color: Color.fromARGB(255, 34, 34, 34),
+                                  // image: index % 2 == 0
+                                  //     ? const DecorationImage(
+                                  //         image: NetworkImage(
+                                  //             'https://1.bp.blogspot.com/-PfQCgUo2U3A/X7XSmSUL9HI/AAAAAAAACkc/kAgYhIGd2hwjqwTsOdgE2efXPopSvFQlACLcBGAsYHQ/w1200-h630-p-k-no-nu/Dulquer%2BSalmaan%2BHit%2BAnd%2BFlop%2BMovies%2BList.jpg'),
+                                  //         fit: BoxFit.cover)
+                                  //     : const DecorationImage(
+                                  //         image: NetworkImage(
+                                  //             'https://upload.wikimedia.org/wikipedia/commons/b/be/Mamta_Mohandas_Red_FM_2020.jpg'),
+                                  //         fit: BoxFit.cover),
+                                  borderRadius: BorderRadius.circular(19),
+                                  // border: Border.all(
+                                  //     color: AppColors.kWhite, width: 2)
+                                ),
                                 child: const Center(
                                     child: Text(
-                                  "What's new",
+                                  "New Connections",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontSize: 13,
-                                    color: AppColors.kDarkPrimary,
+                                    color: AppColors.kWhite,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 )),

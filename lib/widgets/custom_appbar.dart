@@ -65,26 +65,26 @@ class CustomAppbar extends StatelessWidget {
             ,
           ],
         ),
-        SizedBox(
-          height: 29,
-          child: ElevatedButton.icon(
-            style: ElevatedButton.styleFrom(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 1),
-              textStyle:
-                  const TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(3.0)),
-              // backgroundColor: AppColors.kGrey,
-              foregroundColor: Colors.white,
-            ),
-            onPressed: () {},
-            icon: const Icon(
-              Icons.wechat,
-              size: 12,
-            ),
-            label: const Text('Textism'),
-          ),
-        ),
+        // SizedBox(
+        //   height: 29,
+        //   child: ElevatedButton.icon(
+        //     style: ElevatedButton.styleFrom(
+        //       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 1),
+        //       textStyle:
+        //           const TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
+        //       shape: RoundedRectangleBorder(
+        //           borderRadius: BorderRadius.circular(3.0)),
+        //       // backgroundColor: AppColors.kGrey,
+        //       foregroundColor: Colors.white,
+        //     ),
+        //     onPressed: () {},
+        //     icon: const Icon(
+        //       Icons.wechat,
+        //       size: 12,
+        //     ),
+        //     label: const Text('Textism'),
+        //   ),
+        // ),
         // AppSize.kWidth5
       ],
     );

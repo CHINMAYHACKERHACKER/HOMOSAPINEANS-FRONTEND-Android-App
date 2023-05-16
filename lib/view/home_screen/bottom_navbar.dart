@@ -2,8 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:homo_sapiens/utils/colors/colors.dart';
 import 'package:homo_sapiens/utils/styles/sizedbox.dart';
+import 'package:homo_sapiens/view/chat_screen/chat_home.dart';
 import 'package:homo_sapiens/view/home_screen/home_screen.dart';
 import 'package:homo_sapiens/view/home_screen/widgets/custom_bottomsheet.dart';
+import 'package:homo_sapiens/view/personal_profile/personal_profile.dart';
 import 'package:homo_sapiens/widgets/text_widget.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
@@ -113,7 +115,7 @@ class BotomNavigationBar extends StatelessWidget {
     List<PersistentBottomNavBarItem> _navBarsItems() {
       return [
         PersistentBottomNavBarItem(
-          textStyle: const TextStyle(fontSize: 9                    ),
+          textStyle: const TextStyle(fontSize: 15),
           icon: const Icon(
             CupertinoIcons.home,
           ),
@@ -122,17 +124,18 @@ class BotomNavigationBar extends StatelessWidget {
           inactiveColorPrimary: CupertinoColors.systemGrey,
         ),
         PersistentBottomNavBarItem(
-          textStyle: const TextStyle(fontSize: 9                    , fontWeight: FontWeight.bold),
-          icon: const Icon(CupertinoIcons.person_add),
-          title: ("New Connections"),
+          textStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+          icon: const Icon(Icons.wechat),
+          title: ("Textism"),
           activeColorPrimary: AppColors.kLightPrimary,
           inactiveColorPrimary: CupertinoColors.systemGrey,
         ),
         PersistentBottomNavBarItem(
+          textStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           onPressed: (p0) {
             showModalBottomSheet<void>(
               shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(9                    ))),
+                  borderRadius: BorderRadius.all(Radius.circular(9))),
               context: context,
               builder: (BuildContext context) {
                 return Padding(
@@ -149,7 +152,7 @@ class BotomNavigationBar extends StatelessWidget {
                             AppSize.kWidth30,
                             const TextWidget(
                               name: 'Create',
-                              fontSize: 20,
+                              fontSize: 30,
                             ),
                             const Spacer(),
                             IconButton(
@@ -167,10 +170,10 @@ class BotomNavigationBar extends StatelessWidget {
                           icons: Icon(Icons.movie_filter_outlined),
                           text: 'Upload Video',
                         ),
-                        const Createpostbuttons(
-                          icons: Icon(Icons.play_circle_outline_rounded),
-                          text: 'Whats New!',
-                        ),
+                        // const Createpostbuttons(
+                        //   icons: Icon(Icons.play_circle_outline_rounded),
+                        //   text: 'Whats New!',
+                        // ),
                         const Createpostbuttons(
                           icons: Icon(Icons.wifi_rounded),
                           text: 'Go live',
@@ -193,14 +196,14 @@ class BotomNavigationBar extends StatelessWidget {
           inactiveColorPrimary: CupertinoColors.systemGrey,
         ),
         PersistentBottomNavBarItem(
-          textStyle: const TextStyle(fontSize: 9                    , fontWeight: FontWeight.w500),
-          icon: const Icon(CupertinoIcons.infinite),
+          textStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
+          icon: Icon(Icons.menu),
           title: ("Menu"),
           activeColorPrimary: AppColors.kLightPrimary,
           inactiveColorPrimary: CupertinoColors.systemGrey,
         ),
         PersistentBottomNavBarItem(
-          textStyle: const TextStyle(fontSize: 9                    ),
+          textStyle: const TextStyle(fontSize: 15),
           icon: const Icon(CupertinoIcons.profile_circled),
           title: ("Profile"),
           activeColorPrimary: AppColors.kLightPrimary,
@@ -212,10 +215,10 @@ class BotomNavigationBar extends StatelessWidget {
     List<Widget> _buildScreens() {
       return [
         const HomeScreen(),
-        const HomeScreen(),
+        const ChathomeScreen(),
         const BottomSheetExample(),
         const HomeScreen(),
-        const HomeScreen()
+        const PersonalProfile()
       ];
     }
 

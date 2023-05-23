@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:homo_sapiens/utils/colors/colors.dart';
@@ -57,7 +59,7 @@ class PopupBtn extends StatelessWidget {
               //   TextStyle(color: AppColors.kWhite),
               // ),
               child: PopValues(
-                values: "Send Friend Request",
+                values: "Make Friend ?",
               ),
             ),
             const PopupMenuItem<int>(
@@ -91,11 +93,11 @@ class PopupBtn extends StatelessWidget {
         },
         onSelected: (value) {
           if (value == 0) {
-            print("My account menu is selected.");
+            log("My account menu is selected.");
           } else if (value == 1) {
-            print("Settings menu is selected.");
+            log("Settings menu is selected.");
           } else if (value == 2) {
-            print("Logout menu is selected.");
+            log("Logout menu is selected.");
           }
         },
         child: SvgPicture.asset(

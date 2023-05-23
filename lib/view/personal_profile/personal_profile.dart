@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:homo_sapiens/utils/colors/colors.dart';
 import 'package:homo_sapiens/utils/styles/sizedbox.dart';
-import 'package:homo_sapiens/view/personal_profile/widgets/button_pages_widget.dart';
 import 'package:homo_sapiens/view/personal_profile/widgets/common_gridview_widget.dart';
 import 'package:homo_sapiens/view/personal_profile/widgets/common_listview_widget.dart';
 import 'package:homo_sapiens/view/personal_profile/widgets/table_widget.dart';
@@ -44,9 +43,15 @@ class PersonalProfile extends StatelessWidget {
                           child: Column(
                             children: [
                               AppSize.kHeight50,
-                              const TextWidget(name: "Rahul"),
+                              const TextWidget(
+                                name: "Rahul",
+                                fontSize: 30,
+                              ),
                               AppSize.kHeight5,
-                              const TextWidget(name: "rahul@gmail.com"),
+                              // const TextWidget(
+                              //   name: "rahul@gmail.com",
+                              //   fontSize: 20,
+                              // ),
                               AppSize.kHeight10,
                               Row(
                                 mainAxisAlignment:
@@ -67,17 +72,9 @@ class PersonalProfile extends StatelessWidget {
                                     style: ElevatedButton.styleFrom(
                                       backgroundColor: AppColors.kLightPrimary,
                                     ),
-                                    child:
-                                        const TextWidget(name: "Make Friend ?"),
-                                  ),
-                                  Flexible(
-                                    child: ElevatedButton(
-                                      onPressed: () {},
-                                      style: ElevatedButton.styleFrom(
-                                        backgroundColor:
-                                            AppColors.kLightPrimary,
-                                      ),
-                                      child: const TextWidget(name: "Follow"),
+                                    child: const TextWidget(
+                                      name: "Make Friend ?",
+                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                   Flexible(
@@ -87,7 +84,23 @@ class PersonalProfile extends StatelessWidget {
                                         backgroundColor:
                                             AppColors.kLightPrimary,
                                       ),
-                                      child: const TextWidget(name: "Message"),
+                                      child: const TextWidget(
+                                        name: "Follow",
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                  Flexible(
+                                    child: ElevatedButton(
+                                      onPressed: () {},
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor:
+                                            AppColors.kLightPrimary,
+                                      ),
+                                      child: const TextWidget(
+                                        name: "Message",
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -105,6 +118,7 @@ class PersonalProfile extends StatelessWidget {
                                       ProfileFollowingDetails(
                                         text: "3021",
                                         details: "Homo Sapiens",
+                                        
                                       ),
                                       AppSize.kWidth5,
                                       ProfileFollowingDetails(

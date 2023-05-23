@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:homo_sapiens/utils/colors/colors.dart';
 import 'package:homo_sapiens/utils/styles/sizedbox.dart';
 import 'package:homo_sapiens/view/chat_screen/chat_home.dart';
+import 'package:homo_sapiens/view/home_screen/carousal.dart';
 import 'package:homo_sapiens/view/home_screen/home_screen.dart';
 import 'package:homo_sapiens/view/home_screen/widgets/custom_bottomsheet.dart';
 import 'package:homo_sapiens/view/personal_profile/personal_profile.dart';
@@ -115,7 +116,7 @@ class BotomNavigationBar extends StatelessWidget {
     List<PersistentBottomNavBarItem> _navBarsItems() {
       return [
         PersistentBottomNavBarItem(
-          textStyle: const TextStyle(fontSize: 15),
+          textStyle: const TextStyle(fontSize: 16),
           icon: const Icon(
             CupertinoIcons.home,
           ),
@@ -124,14 +125,14 @@ class BotomNavigationBar extends StatelessWidget {
           inactiveColorPrimary: CupertinoColors.systemGrey,
         ),
         PersistentBottomNavBarItem(
-          textStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+          textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           icon: const Icon(Icons.wechat),
           title: ("Textism"),
           activeColorPrimary: AppColors.kLightPrimary,
           inactiveColorPrimary: CupertinoColors.systemGrey,
         ),
         PersistentBottomNavBarItem(
-          textStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+          textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           onPressed: (p0) {
             showModalBottomSheet<void>(
               shape: const RoundedRectangleBorder(
@@ -141,9 +142,9 @@ class BotomNavigationBar extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: SizedBox(
-                    height: 290,
+                    height: 250,
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
                         Row(
@@ -162,6 +163,7 @@ class BotomNavigationBar extends StatelessWidget {
                             AppSize.kWidth20,
                           ],
                         ),
+                        // const Spacer(),
                         const Createpostbuttons(
                           icons: Icon(Icons.image_outlined),
                           text: 'Upload Image',
@@ -196,14 +198,14 @@ class BotomNavigationBar extends StatelessWidget {
           inactiveColorPrimary: CupertinoColors.systemGrey,
         ),
         PersistentBottomNavBarItem(
-          textStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
-          icon: Icon(Icons.menu),
+          textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+          icon: const Icon(Icons.menu),
           title: ("Menu"),
           activeColorPrimary: AppColors.kLightPrimary,
           inactiveColorPrimary: CupertinoColors.systemGrey,
         ),
         PersistentBottomNavBarItem(
-          textStyle: const TextStyle(fontSize: 15),
+          textStyle: const TextStyle(fontSize: 16),
           icon: const Icon(CupertinoIcons.profile_circled),
           title: ("Profile"),
           activeColorPrimary: AppColors.kLightPrimary,
@@ -217,13 +219,13 @@ class BotomNavigationBar extends StatelessWidget {
         const HomeScreen(),
         const ChathomeScreen(),
         const BottomSheetExample(),
-        const HomeScreen(),
+        MenuScreen(),
         const PersonalProfile()
       ];
     }
 
-    final brightness = MediaQuery.of(context).platformBrightness;
-    final isDarkMode = brightness == Brightness.dark;
+    // final brightness = MediaQuery.of(context).platformBrightness;
+    // final isDarkMode = brightness == Brightness.dark;
     return PersistentTabView(context,
         controller: _controller,
         screens: _buildScreens(),
@@ -279,7 +281,14 @@ class Createpostbuttons extends StatelessWidget {
           color: AppColors.kGrey, borderRadius: BorderRadius.circular(8)),
       duration: const Duration(milliseconds: 2),
       child: Row(
-        children: [icons, AppSize.kWidth10, Text(text)],
+        children: [
+          icons,
+          AppSize.kWidth10,
+          Text(
+            text,
+            style: TextStyle(fontSize: 20),
+          )
+        ],
       ),
     );
   }

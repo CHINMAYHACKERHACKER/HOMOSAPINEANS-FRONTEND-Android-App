@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
               clipBehavior: Clip.none,
               children: const [
                 Text(
-                  'E=homoSapiens',
+                  'E = homoSapiens',
                   style: TextStyle(
                     fontSize: 23,
                     color: Color.fromARGB(255, 255, 255, 255),
@@ -58,7 +58,7 @@ class HomeScreen extends StatelessWidget {
                   bottom: 16,
                   child: TextWidget(
                     name: "∞",
-                    color: AppColors.kLightPrimary,
+                    color: Color.fromARGB(255, 255, 255, 255),
                     fontSize: 14,
                   ),
                 ),
@@ -90,10 +90,11 @@ class HomeScreen extends StatelessWidget {
                       itemBuilder: (BuildContext context, int index) {
                         return index == 0
                             ? Container(
-                                width: 69,
+                                width: 72,
+                                height: 70,
                                 margin: const EdgeInsets.all(6),
                                 decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 34, 34, 34),
+                                  color: Color.fromARGB(255, 209, 26, 169),
                                   // image: index % 2 == 0
                                   //     ? const DecorationImage(
                                   //         image: NetworkImage(
@@ -107,15 +108,30 @@ class HomeScreen extends StatelessWidget {
                                   // border: Border.all(
                                   //     color: AppColors.kWhite, width: 2)
                                 ),
-                                child: const Center(
-                                    child: Text(
-                                  "New Connections",
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 13,
-                                    color: AppColors.kWhite,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                child: Center(
+                                    child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "New",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontSize: 17,
+                                        color: AppColors.kWhite,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Text(
+                                      "Connections",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: AppColors.kWhite,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
                                 )),
                               )
                             : Container(
@@ -324,7 +340,13 @@ class HomeScreen extends StatelessWidget {
                                             radius: 15,
                                             child: Center(
                                               child: IconButton(
-                                                  onPressed: () {},
+                                                  onPressed: () {
+                                                    Navigator.push(
+                                                        context,
+                                                        MaterialPageRoute(
+                                                            builder: (context) =>
+                                                                const CommentScreen()));
+                                                  },
                                                   icon: const Icon(
                                                     Icons.message_outlined,
                                                     size: 15,
@@ -400,6 +422,115 @@ class HomeScreen extends StatelessWidget {
               ],
             )),
       ),
+    );
+  }
+}
+
+class CommentScreen extends StatelessWidget {
+  const CommentScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Comment'),
+      ),
+      body: SingleChildScrollView(
+        physics: const ScrollPhysics(),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListTile(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+                tileColor: Colors.grey.withOpacity(0.3),
+                leading: const Icon(Icons.message),
+                title: const Text('4,999 Comments'),
+              ),
+            ),
+            ListView.builder(
+                shrinkWrap: true,
+                itemCount: 2,
+                padding: EdgeInsets.all(8),
+                physics: const ScrollPhysics(),
+                itemBuilder: (context, i) {
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(
+                                      'https://img.mensxp.com/media/content/2021/Jan/South-Indian-Actors-With-Great-Sense-Of-Style-3_600d82fbe65ab.jpeg?w=900&h=1200&cc=1'))),
+                        ),
+                        AppSize.kWidth10,
+                        Flexible(
+                          child: Container(
+                            padding: EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                                color: AppColors.kWhite,
+                                borderRadius: BorderRadius.circular(15)),
+                            child: Column(
+                              children: [
+                                AppSize.kHeight10,
+                                Text(
+                                  'for Image, Language, Audio, Video, 3D, Biology and more. Learn more about Stability AI’s high performance compute power. ... Stability AIs open-source Alpha version of StableLM showcases the power of small, efficient models that can generate high-performing text and code locally',
+                                  style: TextStyle(color: AppColors.kBlack),
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    IconButton(
+                                        onPressed: () {},
+                                        icon: Icon(
+                                          Icons.thumb_up_alt_outlined,
+                                          color: AppColors.kGreen,
+                                        )),
+                                    IconButton(
+                                        onPressed: () {},
+                                        icon: Icon(
+                                          Icons.thumb_down_alt_outlined,
+                                          color: Colors.red,
+                                        )),
+                                    TextButton(
+                                        onPressed: () {}, child: Text('Replay'))
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                }),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8),
+          child: TextField(
+              decoration: InputDecoration(
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 4,
+                  ),
+                  fillColor: AppColors.kGrey,
+                  filled: true,
+                  hintText: 'Write a message..',
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(12)),
+                  suffixIcon: IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.send),
+                  )))),
     );
   }
 }

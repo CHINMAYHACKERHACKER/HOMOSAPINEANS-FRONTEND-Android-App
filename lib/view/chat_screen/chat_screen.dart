@@ -16,7 +16,7 @@ class ChatScreen extends StatelessWidget {
         actions: [
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Icon(
                 Icons.call_outlined,
                 size: 20,
@@ -24,32 +24,36 @@ class ChatScreen extends StatelessWidget {
               TextWidget(
                 name: 'call',
                 fontSize: 10,
+                fontWeight: FontWeight.bold,
               ),
             ],
           ),
-          AppSize.kWidth10,
+          AppSize.kWidth20,     
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Icon(
                 Icons.video_call,
                 size: 20,
               ),
               TextWidget(
                 name: 'Video Call',
+                fontWeight: FontWeight.bold,
                 fontSize: 10,
               ),
             ],
           ),
-          AppSize.kWidth10,
+          AppSize.kWidth20,
           InkWell(
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ChatSettings()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ChatSettings()));
             },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: const [
                 Icon(
                   Icons.settings_outlined,
                   size: 20,
@@ -57,17 +61,18 @@ class ChatScreen extends StatelessWidget {
                 TextWidget(
                   name: 'Settings',
                   fontSize: 10,
+                  fontWeight: FontWeight.bold,
                 ),
               ],
             ),
           ),
-          AppSize.kWidth10,
+          AppSize.kWidth20,
         ],
       ),
       body: Column(
         children: [
           const CircleAvatar(
-            radius: 30,
+            radius: 60,
             backgroundImage: NetworkImage(
               'https://staticimg.spicyonion.com/images/profile/person/unni-mukundan/7Pn9GASysyTG6ZnPhsuRq4ESArC.jpg',
             ),
@@ -76,29 +81,31 @@ class ChatScreen extends StatelessWidget {
             child: ListView.builder(
               itemCount: 10,
               shrinkWrap: true,
-              padding: EdgeInsets.only(top: 10, bottom: 10),
-              physics: ScrollPhysics(),
+              padding: const EdgeInsets.only(top: 10, bottom: 10),
+              physics: const ScrollPhysics(),
               itemBuilder: (context, index) {
                 final isSender = index % 2 == 0;
                 return Container(
-                  padding:
-                      EdgeInsets.only(left: 14, right: 14, top: 10, bottom: 10),
+                  padding: const EdgeInsets.only(
+                      left: 14, right: 14, top: 10, bottom: 10),
                   child: Align(
                     alignment:
                         (isSender ? Alignment.topLeft : Alignment.topRight),
                     child: Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(15),
-                            bottomRight:
-                                isSender ? Radius.circular(15) : Radius.zero,
-                            topRight: Radius.circular(15),
-                            bottomLeft:
-                                isSender ? Radius.zero : Radius.circular(15),
+                            topLeft: const Radius.circular(15),
+                            bottomRight: isSender
+                                ? const Radius.circular(15)
+                                : Radius.zero,
+                            topRight: const Radius.circular(15),
+                            bottomLeft: isSender
+                                ? Radius.zero
+                                : const Radius.circular(15),
                           ),
                           color: (isSender
-                              ? const Color(0xff2b9224)
-                              : const Color(0xff3f51b5))),
+                              ? Color.fromARGB(255, 55, 64, 68)
+                              : Color.fromARGB(255, 210, 89, 221))),
                       padding: const EdgeInsets.symmetric(
                         horizontal: 12,
                         vertical: 5,
@@ -106,12 +113,19 @@ class ChatScreen extends StatelessWidget {
                       child: Wrap(
                         crossAxisAlignment: WrapCrossAlignment.end,
                         children: [
-                          SizedBox(
-                            child: Text(
-                              'a Now,dfdfkmdkfm dfdkfndknfkd dkfndknfkdf fkdnfkdnfkndf dknfdknfdk dknfkdnfkd dfndkfnkdnfkn',
-                              style: TextStyle(fontSize: 15),
-                            ),
-                          ),
+                          (isSender
+                              ? const SizedBox(
+                                  child: Text(
+                                    'Hai',
+                                    style: TextStyle(fontSize: 15),
+                                  ),
+                                )
+                              : const SizedBox(
+                                  child: Text(
+                                    'Hello',
+                                    style: TextStyle(fontSize: 15),
+                                  ),
+                                )),
                           AppSize.kWidth10,
                           Column(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -123,14 +137,14 @@ class ChatScreen extends StatelessWidget {
                                 ),
                                 Wrap(
                                   crossAxisAlignment: WrapCrossAlignment.end,
-                                  children: [
-                                    const Icon(
+                                  children: const [
+                                    Icon(
                                       Icons.done_all_sharp,
-                                      color: Colors.blue,
+                                      color: Color.fromARGB(255, 14, 199, 54),
                                       size: 12,
                                     ),
                                     AppSize.kWidth5,
-                                    const Text(
+                                    Text(
                                       '5.22 Pm',
                                       style: TextStyle(
                                         fontSize: 10,
@@ -160,12 +174,20 @@ class ChatScreen extends StatelessWidget {
                         return Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: SizedBox(
-                            height: 170,
+                            height: 220,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
+                                Align(
+                                  alignment: Alignment.centerRight,
+                                  child: IconButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      icon: Icon(Icons.close)),
+                                ),
                                 // Row(
                                 //   mainAxisAlignment:
                                 //       MainAxisAlignment.spaceBetween,
@@ -179,35 +201,35 @@ class ChatScreen extends StatelessWidget {
                                 //   ],
                                 // ),
                                 Wrap(
-                                  children: [
+                                  children: const [
                                     CustomIconwidget(
                                       text: 'Attachment',
-                                      Iconses: Icon(Icons.attachment_rounded),
+                                      iconses: Icon(Icons.attachment_rounded),
                                     ),
                                     CustomIconwidget(
                                       text: 'Camera',
-                                      Iconses: Icon(Icons.camera_alt_outlined),
+                                      iconses: Icon(Icons.camera_alt_outlined),
                                     ),
                                     CustomIconwidget(
                                       text: 'Video',
-                                      Iconses: Icon(Icons.videocam_outlined),
+                                      iconses: Icon(Icons.videocam_outlined),
                                     ),
                                     CustomIconwidget(
                                       text: 'Gallery',
-                                      Iconses: Icon(Icons.image_outlined),
+                                      iconses: Icon(Icons.image_outlined),
                                     ),
                                     CustomIconwidget(
                                       text: 'Audio',
-                                      Iconses: Icon(Icons.audiotrack_rounded),
+                                      iconses: Icon(Icons.audiotrack_rounded),
                                     ),
                                     CustomIconwidget(
                                       text: 'Contact',
-                                      Iconses:
+                                      iconses:
                                           Icon(Icons.contact_page_outlined),
                                     ),
                                     CustomIconwidget(
                                       text: 'Location',
-                                      Iconses: Icon(Icons.location_on_outlined),
+                                      iconses: Icon(Icons.location_on_outlined),
                                     ),
                                   ],
                                 )
@@ -218,7 +240,7 @@ class ChatScreen extends StatelessWidget {
                       },
                     );
                   },
-                  icon: Icon(Icons.add_circle_outline_rounded)),
+                  icon: const Icon(Icons.add_circle_outline_rounded)),
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -254,28 +276,28 @@ class ChatScreen extends StatelessWidget {
                                                   CrossAxisAlignment.start,
                                               mainAxisSize: MainAxisSize.min,
                                               children: <Widget>[
-                                                Text('Schedule time'),
+                                                const Text('Schedule time'),
                                                 ListTile(
-                                                  leading: Text('Date'),
+                                                  leading: const Text('Date'),
                                                   trailing: IconButton(
                                                       onPressed: () {},
-                                                      icon: Icon(Icons
+                                                      icon: const Icon(Icons
                                                           .calendar_today_sharp)),
                                                 ),
                                                 ListTile(
-                                                  leading: Text('Time'),
+                                                  leading: const Text('Time'),
                                                   trailing: IconButton(
                                                       onPressed: () {},
-                                                      icon: Icon(Icons
+                                                      icon: const Icon(Icons
                                                           .access_time_filled_sharp)),
                                                 ),
                                                 ElevatedButton(
                                                     onPressed: () {},
-                                                    child: Text('Ok'))
+                                                    child: const Text('Ok'))
                                               ])));
                                 });
                           },
-                          child: Icon(Icons.send_rounded)),
+                          child: const Icon(Icons.send_rounded)),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                           borderSide: BorderSide.none),
@@ -289,7 +311,8 @@ class ChatScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              IconButton(onPressed: () {}, icon: Icon(Icons.mic_none_rounded)),
+              IconButton(
+                  onPressed: () {}, icon: const Icon(Icons.mic_none_rounded)),
             ],
           ),
         ],
@@ -301,11 +324,11 @@ class ChatScreen extends StatelessWidget {
 class CustomIconwidget extends StatelessWidget {
   final String text;
 
-  final Icon Iconses;
+  final Icon iconses;
   const CustomIconwidget({
     super.key,
     required this.text,
-    required this.Iconses,
+    required this.iconses,
   });
 
   @override
@@ -318,11 +341,11 @@ class CustomIconwidget extends StatelessWidget {
             radius: 25,
             backgroundColor: Colors.black.withOpacity(0.4),
             child: IconButton(
-                color: Colors.white, onPressed: () {}, icon: Iconses),
+                color: Colors.white, onPressed: () {}, icon: iconses),
           ),
           Text(
             text,
-            style: TextStyle(fontSize: 12),
+            style: const TextStyle(fontSize: 12),
           )
         ],
       ),

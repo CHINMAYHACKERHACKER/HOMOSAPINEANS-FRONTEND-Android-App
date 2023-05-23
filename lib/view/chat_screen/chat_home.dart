@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:homo_sapiens/utils/colors/colors.dart';
 import 'package:homo_sapiens/utils/styles/sizedbox.dart';
 import 'package:homo_sapiens/view/chat_screen/chat_screen.dart';
-import 'package:provider/provider.dart';
+import 'package:homo_sapiens/widgets/text_widget.dart';
 
 class ChathomeScreen extends StatelessWidget {
   const ChathomeScreen({Key? key}) : super(key: key);
@@ -14,7 +14,23 @@ class ChathomeScreen extends StatelessWidget {
       length: 3,
       child: Scaffold(
           appBar: AppBar(
-            title: Text('E=TexTism'),
+            title: Stack(
+              children: [
+                const Text(
+                  'E = TexTism',
+                  style: TextStyle(fontSize: 25),
+                ),
+                Positioned(
+                  right: 2,
+                  bottom: 16,
+                  child: TextWidget(
+                    name: "∞",
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    fontSize: 15,
+                  ),
+                ),
+              ],
+            ),
             actions: [
               IconButton(
                 onPressed: () {},
@@ -28,20 +44,29 @@ class ChathomeScreen extends StatelessWidget {
             bottom: const PreferredSize(
               preferredSize: Size.fromHeight(40),
               child: Align(
-                alignment: Alignment.center,
+                alignment: Alignment.bottomLeft,
                 child: TabBar(
+                  labelStyle: TextStyle(fontWeight: FontWeight.bold),
                   indicatorColor: Colors.white,
                   indicatorSize: TabBarIndicatorSize.label,
                   indicatorPadding: EdgeInsets.all(1),
-                  padding: EdgeInsets.all(5),
+                  padding: EdgeInsets.only(right: 15),
                   isScrollable: true,
                   tabs: [
-                    Tab(
-                      child: Text('Messages'),
+                    Padding(
+                      padding: EdgeInsets.only(right: 15),
+                      child: Tab(
+                        child: Text('Messages'),
+                      ),
                     ),
-                    Tab(
-                      child: Text("Who's Online"),
+                    // Spacer(),
+                    Padding(
+                      padding: EdgeInsets.only(right: 15),
+                      child: Tab(
+                        child: Text("Who's Online"),
+                      ),
                     ),
+                    // Spacer(),
                     Tab(
                       child: Text('My HomoSapiens'),
                     ),
@@ -50,8 +75,8 @@ class ChathomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          body: TabBarView(
-            children: [RecentChatlist(), OnlineFriendlist(), myHomoChatlist()],
+          body: const TabBarView(
+            children: [RecentChatlist(), OnlineFriendlist(), MyHomoChatlist()],
           )),
     );
   }
@@ -73,15 +98,17 @@ class RecentChatlist extends StatelessWidget {
               itemCount: 10,
               shrinkWrap: true,
               physics: const ScrollPhysics(),
-              padding: EdgeInsets.all(2),
+              padding: const EdgeInsets.all(2),
               itemBuilder: (ctx, i) {
                 return Padding(
-                  padding: EdgeInsets.all(5.0),
+                  padding: const EdgeInsets.all(5.0),
                   child: ListTile(
                     onTap: () => Navigator.push(
-                        ctx, MaterialPageRoute(builder: (ctx) => ChatScreen())),
-                    tileColor:
-                        Color.fromARGB(255, 105, 102, 94).withOpacity(0.2),
+                        ctx,
+                        MaterialPageRoute(
+                            builder: (ctx) => const ChatScreen())),
+                    // tileColor: const Color.fromARGB(255, 105, 102, 94)
+                    //     .withOpacity(0.2),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15)),
                     leading: Container(
@@ -89,20 +116,23 @@ class RecentChatlist extends StatelessWidget {
                       width: 50,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
-                        image: DecorationImage(
+                        image: const DecorationImage(
                             image: NetworkImage(
                               'https://images.filmibeat.com/images/1/14484327/14484327-320_download(1).jpg',
                             ),
                             fit: BoxFit.cover),
                       ),
                     ),
-                    title: Text('Aadhmi'),
-                    subtitle: Text('6 new Messages'),
-                    trailing: Icon(
-                      Icons.circle,
-                      size: 11,
-                      color: AppColors.kGreen,
+                    title: const Text(
+                      'Aadhmi',
+                      style: TextStyle(fontWeight: FontWeight.bold),
                     ),
+                    subtitle: const Text('6 new Messages'),
+                    // trailing: const Icon(
+                    //   Icons.circle,
+                    //   size: 11,
+                    //   color: AppColors.kGreen,
+                    // ),
                   ),
                 );
               },
@@ -114,8 +144,8 @@ class RecentChatlist extends StatelessWidget {
   }
 }
 
-class myHomoChatlist extends StatelessWidget {
-  const myHomoChatlist({
+class MyHomoChatlist extends StatelessWidget {
+  const MyHomoChatlist({
     super.key,
   });
 
@@ -124,7 +154,7 @@ class myHomoChatlist extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          ListTile(
+          const ListTile(
             leading: Icon(Icons.groups_2_outlined),
             title: Text('Create New Group'),
             subtitle: Divider(),
@@ -141,19 +171,22 @@ class myHomoChatlist extends StatelessWidget {
                     width: 50,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
-                      image: DecorationImage(
+                      image: const DecorationImage(
                           image: NetworkImage(
                             'https://images.filmibeat.com/images/1/14484327/14484327-320_download(1).jpg',
                           ),
                           fit: BoxFit.cover),
                     ),
                   ),
-                  title: Text('Aadhmi'),
-                  subtitle: Text('6 new Messages'),
+                  title: const Text(
+                    'Aadhmi',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: const Text('6 new Messages'),
                   trailing: IconButton(
                     // color: AppColors.kGreen,
                     onPressed: () {},
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.more_vert,
                       // size: 11,
                     ),
@@ -191,16 +224,19 @@ class OnlineFriendlist extends StatelessWidget {
                     width: 50,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
-                      image: DecorationImage(
+                      image: const DecorationImage(
                           image: NetworkImage(
                             'https://images.filmibeat.com/images/1/14484327/14484327-320_download(1).jpg',
                           ),
                           fit: BoxFit.cover),
                     ),
                   ),
-                  title: Text('Aadhmi'),
-                  subtitle: Text('6 new Messages'),
-                  trailing: Icon(
+                  title: const Text(
+                    'Aadhmi',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: const Text('6 new Messages'),
+                  trailing: const Icon(
                     Icons.circle,
                     color: AppColors.kGreen,
                     size: 11,

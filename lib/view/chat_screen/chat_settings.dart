@@ -9,77 +9,77 @@ class ChatSettings extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Map<dynamic, dynamic>> list = [
       {
-        'icon': Icon(Icons.key),
+        'icon': const Icon(Icons.key),
         'title': 'Account',
         'subtitle': 'Security Notification',
       },
       {
-        'icon': Icon(Icons.api_rounded),
+        'icon': const Icon(Icons.api_rounded),
         'title': 'Change Theme',
         'subtitle': 'You can change your theme',
       },
       {
-        'icon': Icon(Icons.wallpaper),
+        'icon': const Icon(Icons.wallpaper),
         'title': 'Set Wallpaper to background',
         'subtitle': 'You can change your background',
       },
       {
-        'icon': Icon(Icons.person_off_outlined),
+        'icon': const Icon(Icons.person_off_outlined),
         'title': 'Hide Profile',
         'subtitle': 'You can hide your profile',
       },
       {
-        'icon': Icon(Icons.share_rounded),
+        'icon': const Icon(Icons.share_rounded),
         'title': 'Share Chats',
         'subtitle': 'You can share your chats',
       },
       {
-        'icon': Icon(Icons.tv),
+        'icon': const Icon(Icons.tv),
         'title': 'Export Chat',
         'subtitle': 'Security Notification',
       },
       {
-        'icon': Icon(Icons.delete),
+        'icon': const Icon(Icons.delete),
         'title': 'Delete Chat',
         'subtitle': 'Security Notification',
       },
       {
-        'icon': Icon(Icons.save),
+        'icon': const Icon(Icons.save),
         'title': 'Save Chat',
         'subtitle': 'Security Notification',
       },
       {
-        'icon': Icon(Icons.disabled_by_default_outlined),
+        'icon': const Icon(Icons.disabled_by_default_outlined),
         'title': 'Disable Message',
         'subtitle': 'Security Notification',
       },
       {
-        'icon': Icon(Icons.notifications_none_rounded),
+        'icon': const Icon(Icons.notifications_none_rounded),
         'title': 'Notification',
         'subtitle': 'Security Notification',
       },
       {
-        'icon': Icon(Icons.block),
+        'icon': const Icon(Icons.block),
         'title': 'Block List Connection',
         'subtitle': 'Security Notification',
       },
       {
-        'icon': Icon(Icons.message),
+        'icon': const Icon(Icons.message),
         'title': 'Disappearing Messages',
         'subtitle': 'Security Notification',
       },
       {
-        'icon': Icon(Icons.delete_outline),
+        'icon': const Icon(Icons.delete_outline),
         'title': 'Delete Chat History ',
         'subtitle': 'Security Notification',
       },
       {
-        'icon': Icon(Icons.abc),
+        'icon': const Icon(Icons.abc),
         'title': 'Account',
         'subtitle': 'Security Notification',
       },
       {
-        'icon': Icon(Icons.abc),
+        'icon': const Icon(Icons.abc),
         'title': 'Account',
         'subtitle': 'Security Notification',
       },
@@ -87,7 +87,7 @@ class ChatSettings extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Settings'),
+        title: const Text('Settings'),
       ),
       body: ListView.builder(
           itemCount: list.length,

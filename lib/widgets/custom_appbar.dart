@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:homo_sapiens/utils/styles/sizedbox.dart';
+import 'package:homo_sapiens/view/home_screen/widgets/search.dart';
 
 class CustomAppbar extends StatelessWidget {
   const CustomAppbar({
@@ -15,7 +16,10 @@ class CustomAppbar extends StatelessWidget {
         AppSize.kWidth5,
         IconButton(
           padding: const EdgeInsets.all(1),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => SearchScreen()));
+          },
           icon: const Icon(
             CupertinoIcons.search,
             size: 22,

@@ -23,11 +23,13 @@ class ProfileFollowingDetails extends StatelessWidget {
               children: [
                 TextWidget(
                   name: text,
-                  fontSize: 20,
+                  fontSize: 22,
                   fontWeight: FontWeight.bold,
                 ),
                 TextWidget(
                   name: details,
+                  fontSize: 14.5,
+                  fontWeight: FontWeight.bold,
                   color: AppColors.kWhite,
                 ),
               ],

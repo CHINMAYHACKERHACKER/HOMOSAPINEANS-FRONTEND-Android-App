@@ -29,15 +29,24 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   animate_do: ^3.0.2
+  carousel_slider: ^4.2.1
   cupertino_icons: ^1.0.2
   eva_icons_flutter: ^3.1.0
   flutter:
     sdk: flutter
+  # flutter_quill: ^7.1.19
   flutter_svg: ^2.0.4
   persistent_bottom_nav_bar: ^5.0.2
   provider: ^6.0.5
   readmore: ^2.2.0
   socket_io_client: ^2.0.2
+  camera: ^0.10.1
+  path_provider:
+  video_player: 
+  audioplayers: 
+  permission_handler:
+  # filesystem_picker: ^3.1.0
+  file_picker: ^5.3.0
 
 dev_dependencies:
 

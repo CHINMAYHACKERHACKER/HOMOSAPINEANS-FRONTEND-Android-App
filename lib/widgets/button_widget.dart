@@ -28,7 +28,7 @@ class ButtonWidget extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => HomeScreen()));
+              context, MaterialPageRoute(builder: (context) => const HomeScreen()));
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor,

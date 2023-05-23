@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:homo_sapiens/utils/colors/colors.dart';
 import 'package:homo_sapiens/widgets/text_widget.dart';
 
 class RectButton extends StatelessWidget {
@@ -29,7 +28,8 @@ class RectButton extends StatelessWidget {
           icon: reactbtns,
           label: TextWidget(
             name: title!,
-            fontSize: 10,
+            fontWeight: FontWeight.bold,
+            fontSize: 11,
           )),
     );
   }

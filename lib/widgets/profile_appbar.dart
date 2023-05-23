@@ -18,13 +18,13 @@ PreferredSizeWidget profileAppBarWidget(String text, context) {
     //     color: AppColors.kWhite,
     //   ),
     // ),
-    actions: [
-      IconButton(
-        onPressed: () {},
-        icon: const Icon(
-          Icons.notifications,
-        ),
-      ),
-    ],
+    // actions: [
+    //   IconButton(
+    //     onPressed: () {},
+    //     icon: const Icon(
+    //       Icons.notifications,
+    //     ),
+    //   ),
+    // ],
   );
 }

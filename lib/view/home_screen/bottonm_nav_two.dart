@@ -6,6 +6,8 @@ import 'package:homo_sapiens/view/home_screen/bottom_navbar.dart';
 import 'package:homo_sapiens/view/home_screen/camera/camera.dart';
 import 'package:homo_sapiens/view/home_screen/music/music_screen.dart';
 import 'package:homo_sapiens/view/home_screen/video/shoot_share.dart';
+import 'package:homo_sapiens/view/home_screen/video/widgets/create_shoot.dart';
+import 'package:homo_sapiens/view/home_screen/video/widgets/upload_video.dart';
 import 'package:homo_sapiens/widgets/text_widget.dart';
 
 class SecondBottomNav extends StatefulWidget {
@@ -87,7 +89,7 @@ class _SecondBottomNavState extends State<SecondBottomNav> {
                                 AppSize.kWidth30,
                                 const TextWidget(
                                   name: 'Post',
-                                  fontSize: 30,
+                                  fontSize: 25,
                                 ),
                                 const Spacer(),
                                 IconButton(
@@ -102,17 +104,35 @@ class _SecondBottomNavState extends State<SecondBottomNav> {
                               icons: Icon(Icons.music_note),
                               text: 'Add Music',
                             ),
-                            const Createpostbuttons(
-                              icons: Icon(Icons.movie_filter_outlined),
-                              text: 'Upload Video',
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => CreateShoot()));
+                              },
+                              child: const Createpostbuttons(
+                                icons: Icon(Icons.movie_filter_outlined),
+                                text: 'Upload Video',
+                              ),
                             ),
                             // const Createpostbuttons(
                             //   icons: Icon(Icons.play_circle_outline_rounded),
-                            //   text: 'Whats New!',
+                            //   text:
+                            //'Whats New!',
                             // ),
-                            const Createpostbuttons(
-                              icons: Icon(Icons.slow_motion_video_rounded),
-                              text: 'create Shoot and Share',
+
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => CreateShoot()));
+                              },
+                              child: const Createpostbuttons(
+                                icons: Icon(Icons.slow_motion_video_rounded),
+                                text: 'create Shoot and Share',
+                              ),
                             ),
                           ],
                         ),

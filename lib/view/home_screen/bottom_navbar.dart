@@ -274,6 +274,7 @@ class Createpostbuttons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
+      
       width: 350,
       padding: const EdgeInsets.all(10),
       margin: const EdgeInsets.all(5),

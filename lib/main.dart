@@ -3,6 +3,7 @@ import 'package:homo_sapiens/utils/colors/colors.dart';
 import 'package:homo_sapiens/view/home_screen/bottom_navbar.dart';
 import 'package:homo_sapiens/view/home_screen/bottonm_nav_two.dart';
 import 'package:homo_sapiens/view/home_screen/video/shoot_share.dart';
+import 'package:homo_sapiens/view/home_screen/video/widgets/create_video.dart';
 
 import 'view/home_screen/textedits/text_edits.dart';
 
@@ -48,7 +49,7 @@ class MyApp extends StatelessWidget {
       //   bottomAppBarTheme: BottomAppBarTheme(color: AppColors.kGrey),
       //   // fontFamily: 'Chalkduster',
       // ),
-      home: SecondBottomNav(),
+      home: CameraPage(),
     );
   }
 }

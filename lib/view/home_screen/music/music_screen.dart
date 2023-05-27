@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:homo_sapiens/view/home_screen/video/widgets/create_video.dart';
+
+import '../video/widgets/create_shoot.dart';
 
 class MusicScreen extends StatelessWidget {
   const MusicScreen({super.key});
@@ -10,7 +13,16 @@ class MusicScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Music'),
+        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search))],
       ),
+      floatingActionButton: FloatingActionButton(onPressed: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => CreateShoot(
+                      wigetse: CameraPage(),
+                    )));
+      }),
       body: ListView.builder(itemBuilder: (context, index) {
         return Column(
           children: [

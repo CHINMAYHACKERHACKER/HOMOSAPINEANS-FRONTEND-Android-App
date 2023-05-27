@@ -7,8 +7,9 @@ import 'package:homo_sapiens/view/home_screen/video/widgets/upload_video.dart';
 import 'package:homo_sapiens/widgets/text_widget.dart';
 
 class CreateShoot extends StatelessWidget {
-  const CreateShoot({super.key});
+  const CreateShoot({super.key, required this.wigetse});
 
+  final wigetse;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +32,7 @@ class CreateShoot extends StatelessWidget {
           ),
           AppSize.kHeight10,
           TextWidget(
-            name: 'Add Description',
+            name: 'Add Description (optional)',
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
@@ -55,10 +56,8 @@ class CreateShoot extends StatelessWidget {
                         backgroundColor:
                             MaterialStatePropertyAll(AppColors.kDarkPrimary)),
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => UploadVideo()));
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => wigetse));
                     },
                     child: Text('Continue'))),
           ),

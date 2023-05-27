@@ -7,6 +7,7 @@ import 'package:homo_sapiens/view/home_screen/camera/camera.dart';
 import 'package:homo_sapiens/view/home_screen/music/music_screen.dart';
 import 'package:homo_sapiens/view/home_screen/video/shoot_share.dart';
 import 'package:homo_sapiens/view/home_screen/video/widgets/create_shoot.dart';
+import 'package:homo_sapiens/view/home_screen/video/widgets/create_video.dart';
 import 'package:homo_sapiens/view/home_screen/video/widgets/upload_video.dart';
 import 'package:homo_sapiens/widgets/text_widget.dart';
 
@@ -99,23 +100,22 @@ class _SecondBottomNavState extends State<SecondBottomNav> {
                                 AppSize.kWidth20,
                               ],
                             ),
-                            // const Spacer(),
-                            const Createpostbuttons(
-                              icons: Icon(Icons.music_note),
-                              text: 'Add Music',
-                            ),
                             InkWell(
                               onTap: () {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => CreateShoot()));
+                                        builder: (context) => CreateShoot(
+                                              wigetse: UploadVideo(),
+                                            )));
                               },
                               child: const Createpostbuttons(
                                 icons: Icon(Icons.movie_filter_outlined),
                                 text: 'Upload Video',
                               ),
                             ),
+                            // const Spacer(),
+
                             // const Createpostbuttons(
                             //   icons: Icon(Icons.play_circle_outline_rounded),
                             //   text:
@@ -127,12 +127,17 @@ class _SecondBottomNavState extends State<SecondBottomNav> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => CreateShoot()));
+                                      builder: (context) => MusicScreen(),
+                                    ));
                               },
                               child: const Createpostbuttons(
                                 icons: Icon(Icons.slow_motion_video_rounded),
-                                text: 'create Shoot and Share',
+                                text: 'Create Shoot and Share',
                               ),
+                            ),
+                            const Createpostbuttons(
+                              icons: Icon(Icons.music_note),
+                              text: 'Add Music',
                             ),
                           ],
                         ),

@@ -48,6 +48,7 @@ dependencies:
   # filesystem_picker: ^3.1.0
   file_picker: ^5.3.0
   image_picker: ^0.8.7+5
+  chewie: ^1.0.0
 
 dev_dependencies:
 

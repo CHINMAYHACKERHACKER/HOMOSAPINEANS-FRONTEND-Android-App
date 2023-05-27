@@ -4,6 +4,7 @@ import 'package:homo_sapiens/view/home_screen/bottom_navbar.dart';
 import 'package:homo_sapiens/view/home_screen/bottonm_nav_two.dart';
 import 'package:homo_sapiens/view/home_screen/video/shoot_share.dart';
 import 'package:homo_sapiens/view/home_screen/video/widgets/create_video.dart';
+import 'package:homo_sapiens/view/runnig_pictures/running_home.dart';
 
 import 'view/home_screen/textedits/text_edits.dart';
 
@@ -49,37 +50,12 @@ class MyApp extends StatelessWidget {
       //   bottomAppBarTheme: BottomAppBarTheme(color: AppColors.kGrey),
       //   // fontFamily: 'Chalkduster',
       // ),
-      home: CameraPage(),
+      home: RunningPictures(),
     );
   }
 }
 
 class ThemeClass {
-  // static ThemeData lightTheme = ThemeData(
-  //     brightness: Brightness.light,
-  //     // scaffoldBackgroundColor: Colors.white,
-  //     cardColor: AppColors.kLightGrey,
-  //     colorScheme: const ColorScheme.light(),
-  //     // useMaterial3: true,
-  //     primarySwatch: Colors.amber,
-  //     iconButtonTheme: IconButtonThemeData(
-  //       style: ButtonStyle(
-  //         backgroundColor:
-  //             MaterialStatePropertyAll(AppColors.kBlack.withOpacity(0.6)),
-  //         foregroundColor: const MaterialStatePropertyAll(AppColors.kWhite),
-  //       ),
-  //     ),
-  //     elevatedButtonTheme: ElevatedButtonThemeData(
-  //       style: ButtonStyle(
-  //         backgroundColor:
-  //             MaterialStatePropertyAll(AppColors.kBlack.withOpacity(0.6)),
-  //         foregroundColor: const MaterialStatePropertyAll(AppColors.kWhite),
-  //       ),
-  //     ),
-  //     appBarTheme: const AppBarTheme(
-  //         backgroundColor: Colors.white, foregroundColor: Colors.black),
-  //     typography: Typography(black: Typography.blackCupertino));
-
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     scaffoldBackgroundColor: AppColors.kBaseColor,

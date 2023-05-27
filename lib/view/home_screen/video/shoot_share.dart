@@ -1,7 +1,10 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:homo_sapiens/utils/colors/colors.dart';
 import 'package:homo_sapiens/utils/styles/sizedbox.dart';
+import 'package:homo_sapiens/widgets/text_widget.dart';
+import 'package:readmore/readmore.dart';
 
 class ShootandShare extends StatelessWidget {
   const ShootandShare({Key? key}) : super(key: key);
@@ -38,7 +41,7 @@ class Page1 extends StatelessWidget {
               AppSize.kHeight10,
               Container(
                 height: 400,
-                width: 60,
+                width: 65,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   color: Colors.white.withOpacity(0.05),
@@ -56,11 +59,13 @@ class Page1 extends StatelessWidget {
                           ),
                           Text(
                             'Lovely',
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.bold),
                           ),
                           Text(
                             '788',
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -75,11 +80,13 @@ class Page1 extends StatelessWidget {
                           ),
                           Text(
                             'Amazing',
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.bold),
                           ),
                           Text(
                             '788',
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -94,11 +101,13 @@ class Page1 extends StatelessWidget {
                           ),
                           Text(
                             'Outstanding',
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.bold),
                           ),
                           Text(
                             '788',
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -113,11 +122,13 @@ class Page1 extends StatelessWidget {
                           ),
                           Text(
                             'Dislike',
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.bold),
                           ),
                           Text(
                             '788',
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -129,11 +140,13 @@ class Page1 extends StatelessWidget {
                           Icon(Icons.comment),
                           Text(
                             'Comment',
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.bold),
                           ),
                           Text(
                             '788',
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -145,11 +158,13 @@ class Page1 extends StatelessWidget {
                           Icon(Icons.share),
                           Text(
                             'Share',
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.bold),
                           ),
                           Text(
                             '788',
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -163,7 +178,7 @@ class Page1 extends StatelessWidget {
         Align(
           alignment: Alignment.bottomRight,
           child: Container(
-            height: 180,
+            height: 160,
             child: ListView(
               scrollDirection: Axis.horizontal,
               shrinkWrap: true,
@@ -172,7 +187,7 @@ class Page1 extends StatelessWidget {
                 (index) {
                   return Container(
                     width: 330,
-                    height: 150,
+                    height: 100,
                     margin: const EdgeInsets.all(8),
                     padding: const EdgeInsets.all(15),
                     decoration: BoxDecoration(
@@ -216,36 +231,112 @@ class Page1 extends StatelessWidget {
                             ),
                           ],
                         ),
-                        const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text(
-                            'Graphic Designer and Trends, A study Between East and West',
-                            style: TextStyle(fontSize: 16),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.topRight,
-                          child: SizedBox(
-                            height: 25,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 8),
-                                textStyle: const TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 9,
-                                ),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(5.0),
-                                ),
+
+                        RichText(
+                          text: TextSpan(
+                              text:
+                                  'The tiger is the largest living cat species \n',
+                              style: const TextStyle(
+                                color: Colors.black,
                               ),
-                              onPressed: () {},
-                              child: const Text(
-                                'Description',
-                              ),
-                            ),
-                          ),
-                        ),
+                              children: <TextSpan>[
+                                TextSpan(
+                                    text: 'more',
+                                    style: const TextStyle(
+                                      color: Color.fromARGB(255, 52, 175, 224),
+                                    ),
+                                    recognizer: TapGestureRecognizer()
+                                      ..onTap = () {
+                                        showModalBottomSheet<void>(
+                                          shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(9))),
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                            return Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: SizedBox(
+                                                height: 250,
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceAround,
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
+                                                  children: <Widget>[
+                                                    Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: [
+                                                        AppSize.kWidth30,
+                                                        const Text(
+                                                          'The tiger is the largest living cat species and a member of the genus Panthera. It is most recognisable for its dark vertical stripes on orange fur with a white underside. An apex predator, it primarily preys on ungulates, such as deer and wild boa The tiger is the largest living cat species and a member of the genus Panthera. It is most recognisable for its dark vertical stripes on orange fur with a white underside. An apex predator, it primarily preys on ungulates, such as deer and wild boa  ',
+                                                          maxLines: 1,
+                                                        ),
+                                                        const Spacer(),
+                                                        IconButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                          icon: const Icon(
+                                                              Icons.close),
+                                                        ),
+                                                        AppSize.kWidth20,
+                                                      ],
+                                                    ),
+                                                    // const Spacer(),
+                                                  ],
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                        );
+                                        // Navigator.push(
+                                        //   context,
+                                        //   MaterialPageRoute(builder: (context) => navpage),
+                                        // );
+                                        // navigate to desired screen
+                                      })
+                              ]),
+                        )
+
+                        // const Padding(
+                        //   padding: EdgeInsets.all(5.0),
+                        //   child: ReadMoreText(
+                        //     'The tiger is the largest living cat species and a member of the genus Panthera. It is most recognisable for its dark vertical stripes on orange fur with a white underside. An apex predator, it primarily preys on ungulates, such as deer and wild boa The tiger is the largest living cat species and a member of the genus Panthera. It is most recognisable for its dark vertical stripes on orange fur with a white underside. An apex predator, it primarily preys on ungulates, such as deer and wild boa  ',
+                        //     trimLines: 1,
+                        //     trimLength: 50,
+                        //     lessStyle:
+                        //         TextStyle(color: AppColors.kLightPrimary),
+                        //     moreStyle:
+                        //         TextStyle(color: AppColors.kLightPrimary),
+                        //   ),
+                        // ),
+                        // Align(
+                        //   alignment: Alignment.topRight,
+                        //   child: SizedBox(
+                        //     height: 25,
+                        //     child: ElevatedButton(
+                        //       style: ElevatedButton.styleFrom(
+                        //         padding:
+                        //             const EdgeInsets.symmetric(horizontal: 8),
+                        //         textStyle: const TextStyle(
+                        //           fontWeight: FontWeight.w400,
+                        //           fontSize: 9,
+                        //         ),
+                        //         shape: RoundedRectangleBorder(
+                        //           borderRadius: BorderRadius.circular(5.0),
+                        //         ),
+                        //       ),
+                        //       onPressed: () {},
+                        //       child: const Text(
+                        //         'Description',
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
                       ],
                     ),
                   );

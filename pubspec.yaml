@@ -42,13 +42,13 @@ dependencies:
   socket_io_client: ^2.0.2
   camera: ^0.10.1
   path_provider:
-  video_player: 
   audioplayers: 
   permission_handler:
   # filesystem_picker: ^3.1.0
-  file_picker: ^5.3.0
+  file_picker: 
   image_picker: ^0.8.7+5
-  chewie: ^1.0.0
+  video_viewer: ^1.2.7
+
 
 dev_dependencies:
 

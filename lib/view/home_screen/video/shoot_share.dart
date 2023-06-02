@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:homo_sapiens/utils/colors/colors.dart';
 import 'package:homo_sapiens/utils/styles/sizedbox.dart';
-import 'package:homo_sapiens/widgets/text_widget.dart';
-import 'package:readmore/readmore.dart';
 
 class ShootandShare extends StatelessWidget {
   const ShootandShare({Key? key}) : super(key: key);

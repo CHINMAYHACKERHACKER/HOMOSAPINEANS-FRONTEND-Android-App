@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:homo_sapiens/utils/colors/colors.dart';
 import 'package:homo_sapiens/utils/styles/sizedbox.dart';
+import 'package:homo_sapiens/view/FreedomWriter/Freedom_Writers.dart';
+import 'package:homo_sapiens/view/home_screen/video/shoot_share.dart';
 import 'package:homo_sapiens/view/home_screen/widgets/custom_drawer.dart';
 import 'package:homo_sapiens/view/home_screen/widgets/pop_btn.dart';
 import 'package:homo_sapiens/view/home_screen/widgets/react_text.dart';
@@ -35,12 +37,13 @@ class HomeScreen extends StatelessWidget {
           children: [
             Builder(
               builder: (context) => IconButton(
-                icon: SvgPicture.asset(
-                  'assets/images/Group 493.svg',
-                  height: 27,
-                ),
-                onPressed: () => Scaffold.of(context).openDrawer(),
-              ),
+                  icon: SvgPicture.asset(
+                    'assets/images/Group 493.svg',
+                    height: 27,
+                  ),
+                  onPressed: () {}
+                  // => Scaffold.of(context).openDrawer(),
+                  ),
             ),
             Stack(
               clipBehavior: Clip.none,
@@ -154,6 +157,14 @@ class HomeScreen extends StatelessWidget {
                       }),
                 ),
                 AppSize.kHeight10,
+                // ElevatedButton(
+                //     onPressed: () {
+                //       Navigator.push(
+                //           context,
+                //           MaterialPageRoute(
+                //               builder: (context) => FreedomWritersScreen()));
+                //     },
+                //     child: Icon(Icons.add)),
                 ListView.builder(
                     itemCount: 10,
                     physics: const ScrollPhysics(),

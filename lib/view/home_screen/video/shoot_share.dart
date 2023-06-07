@@ -6,6 +6,8 @@ import 'package:homo_sapiens/utils/styles/sizedbox.dart';
 import 'package:homo_sapiens/widgets/text_widget.dart';
 import 'package:readmore/readmore.dart';
 
+import '../../../widgets/custom_appbar.dart';
+
 class ShootandShare extends StatelessWidget {
   const ShootandShare({Key? key}) : super(key: key);
 
@@ -377,6 +379,107 @@ class _ShootState extends State<Shoot> {
         actions: const <Widget>[],
       ),
       body: PageView(scrollDirection: Axis.vertical, children: _list),
+    );
+  }
+}
+
+class ShotAndShare extends StatefulWidget {
+  const ShotAndShare({super.key});
+
+  @override
+  State<ShotAndShare> createState() => _ShotAndShareState();
+}
+
+class _ShotAndShareState extends State<ShotAndShare> {
+  List Images = [
+    'https://picsum.photos/id/237/200/300',
+    'https://picsum.photos/id/237/200/300',
+    'https://picsum.photos/id/237/200/300'
+  ];
+  List content = ['hcsjhdhdsjh', 'hdsgcsdhcggsd', 'hdsggsdg'];
+  List time = ['49 Minutes Ago', '52 Minuts Ago', '52 Minuts Ago'];
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          leadingWidth: 220,
+          // leading: Builder(
+          //   builder: (context) => IconButton(
+          //     icon: SvgPicture.asset(
+          //       'assets/images/Group 383.svg',
+          //       height: 27,
+          //     ),
+          //     onPressed: () => Scaffold.of(context).openDrawer(),
+          //   ),
+          // ),
+          actions: const [
+            CustomAppbar(),
+          ],
+          leading: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Builder(
+                builder: (context) => IconButton(
+                    icon: SvgPicture.asset(
+                      'assets/images/Group 493.svg',
+                      height: 27,
+                    ),
+                    onPressed: () {}
+                    // => Scaffold.of(context).openDrawer(),
+                    ),
+              ),
+              Stack(
+                clipBehavior: Clip.none,
+                children: const [
+                  Text(
+                    'E = homoSapiens',
+                    style: TextStyle(
+                      fontSize: 23,
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  Positioned(
+                    right: 2,
+                    bottom: 16,
+                    child: TextWidget(
+                      name: "∞",
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      fontSize: 14,
+                    ),
+                  ),
+                ],
+              ),
+              // const Spacer(),
+            ],
+          ),
+        ),
+        body: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            color: Colors.transparent,
+            child: ListView.builder(
+                itemCount: content.length,
+                itemBuilder: (context, i) {
+                  return Container(
+                    margin: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 1, color: Colors.black),
+                      image: DecorationImage(
+                          image: NetworkImage(
+                              'https://picsum.photos/id/237/200/300',
+                              scale: 1),
+                          fit: BoxFit.cover),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    width: MediaQuery.of(context).size.width,
+                    height: 200,
+                                     );
+                })),
+      ),
     );
   }
 }

@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:homo_sapiens/utils/colors/colors.dart';
 import 'package:homo_sapiens/view/home_screen/bottom_navbar.dart';
 import 'package:homo_sapiens/view/home_screen/bottonm_nav_two.dart';
+import 'package:homo_sapiens/view/home_screen/home_screen.dart';
 import 'package:homo_sapiens/view/home_screen/video/shoot_share.dart';
 import 'package:homo_sapiens/view/home_screen/video/widgets/create_video.dart';
+import 'package:homo_sapiens/view/login_screen/login_screen.dart';
 import 'package:homo_sapiens/view/runnig_pictures/running_home.dart';
-
 import 'view/home_screen/textedits/text_edits.dart';
 
 void main() {
@@ -50,7 +51,7 @@ class MyApp extends StatelessWidget {
       //   bottomAppBarTheme: BottomAppBarTheme(color: AppColors.kGrey),
       //   // fontFamily: 'Chalkduster',
       // ),
-      home: RunningPictures(),
+      home: BotomNavigationBar(),
     );
   }
 }

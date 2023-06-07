@@ -12,10 +12,13 @@ class RunningPictures extends StatelessWidget {
         title: Text('RunningPictures'),
       ),
       body: ListView.builder(
+        
+        shrinkWrap: true,
         padding: EdgeInsets.all(12),
         itemCount: 5,
         itemBuilder: (context, index) {
           return Column(
+            
             children: [
               Row(
                 children: const [

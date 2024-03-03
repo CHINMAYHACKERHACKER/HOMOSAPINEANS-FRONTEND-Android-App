@@ -63,8 +63,9 @@ class _CamerarecodState extends State<Camerarecod> {
 
       try {
         await _controller!.startVideoRecording();
-        _audioPlayer.play('path_to_music_file.mp3',
-            isLocal: true); // Play music
+        // _audioPlayer.play('path_to_music_file.mp3',
+
+        //     ); // Play music
         setState(() {
           _isRecording = true;
           startTimer();

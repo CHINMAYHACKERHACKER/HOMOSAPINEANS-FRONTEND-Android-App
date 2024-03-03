@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:homo_sapiens/utils/colors/colors.dart';
 import 'package:homo_sapiens/utils/styles/sizedbox.dart';
-import 'package:homo_sapiens/widgets/text_widget.dart';
-import 'package:readmore/readmore.dart';
 
 import '../../../widgets/custom_appbar.dart';
 
@@ -442,15 +440,15 @@ class _ShotAndShareState extends State<ShotAndShare> {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  Positioned(
-                    right: 2,
-                    bottom: 16,
-                    child: TextWidget(
-                      name: "∞",
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      fontSize: 14,
-                    ),
-                  ),
+                  // Positioned(
+                  //   right: 2,
+                  //   bottom: 16,
+                  //   child: TextWidget(
+                  //     name: "∞",
+                  //     color: Color.fromARGB(255, 255, 255, 255),
+                  //     fontSize: 14,
+                  //   ),
+                  // ),
                 ],
               ),
               // const Spacer(),

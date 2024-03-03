@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:homo_sapiens/view/FreedomWriter/writer.dart';
 import 'package:readmore/readmore.dart';
 
 import '../../widgets/custom_appbar.dart';
+import 'AddCoverPage.dart';
 
+// ignore: depend_on_referenced_packages
 class FreedomWritersScreen extends StatefulWidget {
   const FreedomWritersScreen({super.key});
 
@@ -15,9 +18,9 @@ class FreedomWritersScreen extends StatefulWidget {
 
 class _FreedomWritersState extends State<FreedomWritersScreen> {
   List profilePick = [
-    'https://picsum.photos/id/237/200/300',
-    'https://picsum.photos/id/237/200/300',
-    'https://picsum.photos/id/237/200/300'
+    'https://picsum.photos/200/300',
+    'https://picsum.photos/200/300',
+    'https://picsum.photos/200/300'
   ];
   List ProfileName = ['Jack Danial', 'Jack Danial', 'Jack Danial'];
   List Postion = ['graphic Designer', 'graphic Designer', 'graphic Designer'];
@@ -27,9 +30,9 @@ class _FreedomWritersState extends State<FreedomWritersScreen> {
     'Sharpness in the mind'
   ];
   List Creted = [
-    'jan 9, 2023, 500 Views, 5 min read',
-    'jan 9, 2023, 500 Views, 5 min read',
-    'jan 9, 2023, 500 Views, 5 min read'
+    'jan 9, 2023, 500 Views',
+    'jan 9, 2023, 500 Views',
+    'jan 9, 2023, 500 Views'
   ];
 
   List lovers = ['499', '499', '499'];
@@ -81,20 +84,22 @@ class _FreedomWritersState extends State<FreedomWritersScreen> {
                   Text(
                     'E = Freedom Writers',
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 17,
                       color: Color.fromARGB(255, 255, 255, 255),
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  // Positioned(
-                  //   right: 2,
-                  //   bottom: 16,
-                  //   child: TextWidget(
-                  //     name: "∞",
-                  //     color: Color.fromARGB(255, 255, 255, 255),
-                  //     fontSize: 14,
-                  //   ),
-                  // ),
+                  Positioned(
+                    right: 2,
+                    bottom: 16,
+                    child:  Text(
+                      "∞",
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        fontSize: 14,
+                      ),
+                    ),
+                  ),
                 ],
               ),
               // const Spacer(),
@@ -107,59 +112,70 @@ class _FreedomWritersState extends State<FreedomWritersScreen> {
           child: ListView.builder(
               itemCount: profilePick.length,
               itemBuilder: (context, i) {
-                return Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: ListTile(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => FreedonWritersDeatiled(
-                                  profilePick: profilePick[i],
-                                  ProfileName: ProfileName[i],
-                                  Creted: Creted[i],
-                                  Postion: Postion[i],
-                                  amazing: amazing[i],
-                                  comments: comments[i],
-                                  content: content[i],
-                                  dislike: dislike[i],
-                                  lovers: lovers[i],
-                                  outstanding: outstanding[i],
-                                  dis: dis[i])));
-                    },
-                    title: Row(
-                      children: [
-                        Text(ProfileName[i]),
-                        SizedBox(
-                          width: 10,
+                return Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: ListTile(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => FreedonWritersDeatiled(
+                                      profilePick: profilePick[i],
+                                      ProfileName: ProfileName[i],
+                                      Creted: Creted[i],
+                                      Postion: Postion[i],
+                                      amazing: amazing[i],
+                                      comments: comments[i],
+                                      content: content[i],
+                                      dislike: dislike[i],
+                                      lovers: lovers[i],
+                                      outstanding: outstanding[i],
+                                      dis: dis[i])));
+                        },
+                        title: Row(
+                          children: [
+                            Text(ProfileName[i]),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            SvgPicture.asset(
+                              'assets/images/Group 493.svg',
+                              height: 15,
+                            ),
+                          ],
                         ),
-                        SvgPicture.asset(
-                          'assets/images/Group 493.svg',
-                          height: 15,
+                        subtitle: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(Postion[i]),
+                            Text(
+                              content[i],
+                              style: TextStyle(fontSize: 25),
+                            ),
+                            Text(
+                              Creted[i],
+                              style: TextStyle(fontSize: 10),
+                            ),
+                          ],
                         ),
-                      ],
+                        leading: CircleAvatar(
+                          maxRadius: 20,
+                          backgroundImage: NetworkImage(profilePick[i]),
+                        ),
+                        isThreeLine: true,
+                        trailing: Container(
+                            width: 100,
+                            height: 100,
+                            child: Image.network(
+                              profilePick[i],
+                              fit: BoxFit.cover,
+                            )),
+                      ),
                     ),
-                    subtitle: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(Postion[i]),
-                        Text(
-                          content[i],
-                          style: TextStyle(fontSize: 20),
-                        ),
-                        Text(
-                          Creted[i],
-                          style: TextStyle(fontSize: 10),
-                        ),
-                      ],
-                    ),
-                    leading: CircleAvatar(
-                      maxRadius: 20,
-                      backgroundImage: NetworkImage(profilePick[i]),
-                    ),
-                    isThreeLine: true,
-                    trailing: Icon(Icons.wifi_tethering_error_rounded_rounded),
-                  ),
+                    Divider()
+                  ],
                 );
               }),
         ),
@@ -207,7 +223,8 @@ class _FreedonWritersDeatiledState extends State<FreedonWritersDeatiled> {
     Icons.star,
     Icons.workspace_premium_rounded,
     Icons.handshake,
-    Icons.comment
+    Icons.comment,
+    Icons.share,
   ];
   List<String> buttons = [
     'Lovely',
@@ -215,11 +232,20 @@ class _FreedonWritersDeatiledState extends State<FreedonWritersDeatiled> {
     'Outstaning',
     'Dislike',
     'Comment',
+    'Share'
   ];
   @override
   Widget build(BuildContext context) {
     return Material(
       child: Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Center(
+            child: Icon(Icons.arrow_back),
+          ),
+        ),
         appBar: AppBar(
           automaticallyImplyLeading: false,
           leadingWidth: 220,
@@ -232,8 +258,9 @@ class _FreedonWritersDeatiledState extends State<FreedonWritersDeatiled> {
           //     onPressed: () => Scaffold.of(context).openDrawer(),
           //   ),
           // ),
-          actions: const [
+          actions:  [
             CustomAppbar(),
+            Icon(Icons.share)
           ],
           leading: Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -259,15 +286,17 @@ class _FreedonWritersDeatiledState extends State<FreedonWritersDeatiled> {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  // Positioned(
-                  //   right: 2,
-                  //   bottom: 16,
-                  //   child: TextWidget(
-                  //     name: "∞",
-                  //     color: Color.fromARGB(255, 255, 255, 255),
-                  //     fontSize: 14,
-                  //   ),
-                  // ),
+                  Positioned(
+                    right: 2,
+                    bottom: 16,
+                    child: Text(
+                       "∞",
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        fontSize: 14,
+                      ),
+                    ),
+                  ),
                 ],
               ),
               // const Spacer(),
@@ -294,34 +323,24 @@ class _FreedonWritersDeatiledState extends State<FreedonWritersDeatiled> {
                       height: 27,
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Align(
-                      alignment: Alignment.bottomLeft,
-                      child: Text(
-                        'How is This Stroy?',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(color: Color(0xff008080)),
-                      ),
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(
-                        '${widget.lovers} Lovers',
-                        style: TextStyle(fontSize: 13),
-                      ),
-                      Text('${widget.amazing} Amazing,',
-                          style: TextStyle(fontSize: 13)),
-                      Text('${widget.outstanding} Outstanding',
-                          style: TextStyle(fontSize: 13)),
-                      Text('${widget.dislike} Dislike',
-                          style: TextStyle(fontSize: 10, color: Colors.grey)),
-                      Text('${widget.comments} Comments',
-                          style: TextStyle(fontSize: 10, color: Colors.grey))
-                    ],
-                  ),
+
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  //   children: [
+                  //     Text(
+                  //       '${widget.lovers} Lovers',
+                  //       style: TextStyle(fontSize: 13),
+                  //     ),
+                  //     Text('${widget.amazing} Amazing,',
+                  //         style: TextStyle(fontSize: 13)),
+                  //     Text('${widget.outstanding} Outstanding',
+                  //         style: TextStyle(fontSize: 13)),
+                  //     Text('${widget.dislike} Dislike',
+                  //         style: TextStyle(fontSize: 10, color: Colors.grey)),
+                  //     Text('${widget.comments} Comments',
+                  //         style: TextStyle(fontSize: 10, color: Colors.grey))
+                  //   ],
+                  // ),
                   Divider(),
                   Container(
                     width: MediaQuery.of(context).size.width,
@@ -336,7 +355,7 @@ class _FreedonWritersDeatiledState extends State<FreedonWritersDeatiled> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        FreedomWriterWriter()));
+                                        AddCoverPage()));
                           },
                           child: Container(
                             margin: EdgeInsets.all(5),
@@ -462,73 +481,3 @@ class _FreedonWritersDeatiledState extends State<FreedonWritersDeatiled> {
                       ]),
                 );*/
 
-class FreedomWriterWriter extends StatefulWidget {
-  const FreedomWriterWriter({super.key});
-
-  @override
-  State<FreedomWriterWriter> createState() => _FreedomWriterWriterState();
-}
-
-class _FreedomWriterWriterState extends State<FreedomWriterWriter> {
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      child: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          leadingWidth: 220,
-          // leading: Builder(
-          //   builder: (context) => IconButton(
-          //     icon: SvgPicture.asset(
-          //       'assets/images/Group 383.svg',
-          //       height: 27,
-          //     ),
-          //     onPressed: () => Scaffold.of(context).openDrawer(),
-          //   ),
-          // ),
-          actions: const [
-            CustomAppbar(),
-          ],
-          leading: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Builder(
-                builder: (context) => IconButton(
-                    icon: SvgPicture.asset(
-                      'assets/images/Group 493.svg',
-                      height: 27,
-                    ),
-                    onPressed: () {}
-                    // => Scaffold.of(context).openDrawer(),
-                    ),
-              ),
-              Stack(
-                clipBehavior: Clip.none,
-                children: const [
-                  Text(
-                    'E = Freedom Writers',
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  // Positioned(
-                  //   right: 2,
-                  //   bottom: 16,
-                  //   child: TextWidget(
-                  //     name: "∞",
-                  //     color: Color.fromARGB(255, 255, 255, 255),
-                  //     fontSize: 14,
-                  //   ),
-                  // ),
-                ],
-              ),
-              // const Spacer(),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}

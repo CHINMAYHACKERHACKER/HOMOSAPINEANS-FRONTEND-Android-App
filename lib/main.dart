@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:homo_sapiens/utils/colors/colors.dart';
+import 'package:homo_sapiens/view/AmazingReviews/AmazingBottomNav.dart';
+import 'package:homo_sapiens/view/AmazingReviews/Amazingeviews.dart';
+import 'package:homo_sapiens/view/FreedomWriter/Freedom_Writers.dart';
+import 'package:homo_sapiens/view/FreedomWriter/Widgets/FreedomWriters_bootm.dart';
 import 'package:homo_sapiens/view/home_screen/bottom_navbar.dart';
 import 'package:homo_sapiens/view/home_screen/bottonm_nav_two.dart';
 import 'package:homo_sapiens/view/home_screen/home_screen.dart';
@@ -18,27 +22,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final brightness = MediaQuery.of(context).platformBrightness;
-
-    // Provider.of<ThemeModeProvider>(context).dark == true
-    //     ? SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    //         systemNavigationBarColor: Colors.red,
-    //         statusBarColor: Colors.white,
-    //         statusBarBrightness: Brightness.dark,
-    //         systemNavigationBarIconBrightness: Brightness.dark,
-    //       ))
-    //     : SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    //         systemNavigationBarColor: Colors.yellow,
-    //         statusBarColor: Colors.white,
-    //         statusBarBrightness: Brightness.light,
-    //         systemNavigationBarIconBrightness: Brightness.light,
-    //       ));
-    // final isDarkMode =
-    //     MediaQuery.of(context).platformBrightness == Brightness.dark;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
-      // theme: ThemeClass.lightTheme,
       darkTheme: ThemeClass.darkTheme,
       // theme: ThemeData(
       //   useMaterial3: true,
@@ -51,7 +37,9 @@ class MyApp extends StatelessWidget {
       //   bottomAppBarTheme: BottomAppBarTheme(color: AppColors.kGrey),
       //   // fontFamily: 'Chalkduster',
       // ),
-      home: BotomNavigationBar(),
+      // home: FreedomWritersScreen(),
+      // home: SecondBottomNav(),
+      home: FreedomBottomNavi(),
     );
   }
 }
@@ -75,7 +63,6 @@ class ThemeClass {
         foregroundColor: MaterialStatePropertyAll(AppColors.kWhite),
       ),
     ),
-    // useMaterial3: true,
     fontFamily: 'Ysabeau',
     colorScheme: const ColorScheme.dark(),
     appBarTheme: const AppBarTheme(

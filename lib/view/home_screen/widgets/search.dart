@@ -32,8 +32,9 @@ class SearchScreen extends StatelessWidget {
           itemCount: 10,
           itemBuilder: (context, i) {
             return Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(10.0),
               child: Container(
+
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                     color: Colors.grey.withOpacity(0.3),
